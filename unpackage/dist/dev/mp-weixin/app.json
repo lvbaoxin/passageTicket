@@ -1,0 +1,17 @@
+{
+  "pages": [
+    "pages/ticketList/index",
+    "pages/ticketBuy/index",
+    "pages/addUser/index",
+    "pages/index/index",
+    "pages/calendar/index"
+  ],
+  "subPackages": [],
+  "window": {
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "渤海湾水路客运联网售票",
+    "navigationBarBackgroundColor": "#1485EE",
+    "backgroundColor": "#1485EE"
+  },
+  "usingComponents": {}
+}

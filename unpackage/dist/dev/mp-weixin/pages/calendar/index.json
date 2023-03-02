@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "渤海湾水路客运联网售票",
+  "usingComponents": {
+    "calendar": "/components/mobile-calendar-simple/Calendar"
+  }
+}

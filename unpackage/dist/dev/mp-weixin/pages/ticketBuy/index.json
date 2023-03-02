@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "订单填写",
+  "usingComponents": {
+    "uni-icons": "/uni_modules/uni-icons/components/uni-icons/uni-icons",
+    "plate-input": "/components/uni-plate-input/uni-plate-input",
+    "popup": "/components/popup/popup"
+  }
+}

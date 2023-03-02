@@ -1,0 +1,111 @@
+.forPos {
+	position: relative;
+}
+
+.forFlex {
+	display: flex;
+	align-items: center
+}
+
+.justifyCenter {
+	justify-content: center;
+}
+.justifyBetween{
+	justify-content: space-between;
+}
+
+.w90 {
+	width: 90%;
+	margin: 0 auto;
+}
+.textr{
+	text-align: right;
+}
+.bg {
+		background: #eee;
+		height: 100vh;
+	}
+.noticeView {
+	z-index: 2;
+	width: 650rpx;
+	height: 80rpx;
+	background: #eff7ff;
+	border-radius: 20rpx 20rpx 0rpx 0rpx;
+	font-size: 22rpx;
+	font-family: Source Han Sans CN, Source Han Sans CN-Regular;
+	font-weight: 400;
+	color: #1a1a1a;
+	line-height: 80rpx;
+	padding: 0px 30rpx;
+	/* margin: -30rpx auto 0; */
+	position: absolute;
+	left: 0px;
+	bottom: 10rpx;
+	transform: translate(10px, 30px);
+}
+
+
+.cityTitle {
+	font-size: 24rpx;
+	color: #a8a8a8;
+}
+
+.cityItem {
+	width: 40%;
+	border-bottom: 1rpx solid #A8A8A8;
+	padding-bottom: 30rpx;
+}
+
+.cityInput {
+	margin-top: 10rpx;
+	color: #1A1A1A;
+}
+
+.cityView {
+	display: flex;
+	width: 90%;
+	margin: 40rpx auto 0;
+	align-items: center;
+	justify-content: space-between;
+	height: 160rpx;
+}
+
+.dateView {
+	width: 90%;
+	margin: 0 auto;
+}
+
+.dateInput {
+	color: #1A1A1A;
+}
+
+.ticketSearchBtn {
+	width: 650rpx;
+	height: 88rpx;
+	margin: 80rpx auto 20rpx;
+	background: #1485ee;
+	border-radius: 44rpx;
+	font-size: 32rpx;
+	font-weight: 700;
+	text-align: center;
+	color: #ffffff;
+	line-height: 88rpx;
+}
+
+.ticketAboutBtn {
+	font-size: 24rpx;
+	color: #a8a8a8;
+	margin: 0 auto;
+	text-align: center;
+}
+
+.copyRight {
+	font-size: 24rpx;
+	color: #a8a8a8;
+	position: absolute;
+	bottom: 50rpx;
+	left: 50%;
+	transform: translate(-50%, -50rpx);
+	white-space: nowrap;
+	text-align: center;
+}
