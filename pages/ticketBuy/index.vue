@@ -30,7 +30,25 @@
 					<uni-icons type="plus" color='#1485ee' size="26"></uni-icons>添加乘客
 				</view>
 			</view>
-			<view class="buyItem" style='padding:0'>
+			<view style='color:#1485EE;'>车辆上船</view>
+			<view class="buyItem">
+				<view class="forFlex justifyBetween">
+					<view class="carLeft">
+						<view class='carType'>
+							小型汽车
+						</view>
+						<view class='carInfo'>
+							6米以内车型轿车/吉普车/商务车 (车票不带司机票)
+						</view>
+					</view>
+					<view class="carRight">
+						<view class='carPrice'>￥700.0</view>
+						<view class='carInfo'>余票:12张</view>
+						<uni-number-box @change="changeValue" />
+					</view>
+				</view>
+			</view>
+			<!-- <view class="buyItem" style='padding:0'>
 				<view class=' forFlex justifyBetween' style="padding:24rpx">
 					<view>
 						车辆上船
@@ -93,7 +111,7 @@
 				<view class='forFlex' style="color:#A7A7A7">
 					无可用优惠券 <uni-icons type="forward" color='#A7A7A7' size="28"></uni-icons>
 				</view>
-			</view>
+			</view> -->
 
 
 		</view>
@@ -148,8 +166,8 @@
 			open() {
 				this.$refs.popUp.open()
 			},
-			addUser() {
-
+			changeValue(value) {
+				console.log('返回数值：', value);
 			},
 			switch2Change: function(e) {
 
@@ -291,5 +309,21 @@
 
 	.getCarInfo {
 		font-size: 20rpx;
+	}
+
+	.carInfo {
+		color: #a8a8a8;
+		font-size: 22rpx;
+		margin-top: 12rpx;
+	}
+
+	.carLeft {
+		width: 50%;
+	}
+
+	.carPrice {
+		color: #FF5A00;
+		font-size: 28rpx;
+		margin-top: 16rpx;
 	}
 </style>

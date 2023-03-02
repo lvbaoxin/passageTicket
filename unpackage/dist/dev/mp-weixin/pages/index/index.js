@@ -141,7 +141,7 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = void 0;
 var Swiper = function Swiper() {
   __webpack_require__.e(/*! require.ensure | components/swiper/swiper */ "components/swiper/swiper").then((function () {
-    return resolve(__webpack_require__(/*! ../../components/swiper/swiper.vue */ 99));
+    return resolve(__webpack_require__(/*! ../../components/swiper/swiper.vue */ 106));
   }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
 };
 var Popup = function Popup() {

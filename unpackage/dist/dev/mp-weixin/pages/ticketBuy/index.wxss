@@ -105,4 +105,17 @@
 .getCarInfo {
 	font-size: 20rpx;
 }
+.carInfo {
+	color: #a8a8a8;
+	font-size: 22rpx;
+	margin-top: 12rpx;
+}
+.carLeft {
+	width: 50%;
+}
+.carPrice {
+	color: #FF5A00;
+	font-size: 28rpx;
+	margin-top: 16rpx;
+}
 
