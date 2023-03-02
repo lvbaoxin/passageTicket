@@ -108,7 +108,7 @@
 .carInfo {
 	color: #a8a8a8;
 	font-size: 22rpx;
-	margin-top: 12rpx;
+	margin: 12rpx 0;
 }
 .carLeft {
 	width: 50%;
@@ -117,5 +117,46 @@
 	color: #FF5A00;
 	font-size: 28rpx;
 	margin-top: 16rpx;
+}
+.carTelBtn {
+	width: 120rpx;
+	height: 40rpx;
+	background: #eff7ff;
+	border-radius: 2.5rpx;
+	color: #1a1a1a;
+	font-size: 22rpx;
+	text-align: center;
+	line-height: 40rpx;
+}
+.affirmView {
+	position: fixed;
+	bottom: 0;
+	height: 110rpx;
+	background: #fff;
+	left: 0;
+	right: 0;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0 20rpx;
+}
+.affirmViewLeft {
+	display: flex;
+	align-items: center;
+	font-size: 32rpx;
+	color: #a8a8a8;
+}
+.affirmPrice {
+	color: #FF5A00;
+}
+.affirmViewRight {
+	width: 240rpx;
+	height: 88rpx;
+	background: #1485ee;
+	border-radius: 44rpx;
+	font-size: 32rpx;
+	text-align: center;
+	color: #ffffff;
+	line-height: 88rpx;
 }
 

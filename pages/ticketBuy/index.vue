@@ -42,11 +42,48 @@
 						</view>
 					</view>
 					<view class="carRight">
-						<view class='carPrice'>￥700.0</view>
-						<view class='carInfo'>余票:12张</view>
-						<uni-number-box @change="changeValue" />
+						<view class='carPrice textr'>￥700.00</view>
+						<view class='carInfo textr'>余票:12张</view>
+						<uni-number-box @change="changeValue" background="#fff" color="#1485EE" :value="numberValue"/>
 					</view>
 				</view>
+			</view>
+			<view class="buyItem">
+				<view class="forFlex justifyBetween">
+					<view class="carLeft">
+						<view class='carType'>
+							皮卡车
+						</view>
+						<view class='carInfo'>
+							7米内皮卡车
+						</view>
+					</view>
+					<view class="carRight">
+						<view class='carPrice textr'>￥750.00</view>
+						<view class='carInfo textr'>余票:12张</view>
+						<uni-number-box @change="changeValue2" background="#fff" color="#1485EE" :value="numberValue" />
+					</view>
+				</view>
+			</view>
+			<view class="buyItem">
+				<view class="forFlex justifyBetween">
+					<view class="carLeft">
+						<view class='carType'>
+							货车
+						</view>
+						<view class='carInfo'>
+							如需货车上船，请联系我们
+						</view>
+					</view>
+					<view class="carRight">
+						<view class='carTelBtn'>立即咨询</view>
+					</view>
+				</view>
+			</view>
+			<view class="affirmView">
+				<view class="affirmViewLeft">订单总额:<view class='affirmPrice'>￥{{affirmPrice}}</view>
+				</view>
+				<view class="affirmViewRight">确认订单</view>
 			</view>
 			<!-- <view class="buyItem" style='padding:0'>
 				<view class=' forFlex justifyBetween' style="padding:24rpx">
@@ -136,7 +173,11 @@
 				plateShow: false,
 				getCar: false,
 				index: 0,
-				array: ['轿车']
+				array: ['轿车'],
+				carNum: 0,
+				carNum2: 0,
+				affirmPrice: 0,
+				numberValue: 0,
 			}
 		},
 
@@ -167,7 +208,12 @@
 				this.$refs.popUp.open()
 			},
 			changeValue(value) {
-				console.log('返回数值：', value);
+				this.carNum = value
+				this.affirmPrice = Number(this.carNum * 700) + Number(this.carNum2 * 750)
+			},
+			changeValue2(value) {
+				this.carNum2 = value
+				this.affirmPrice = Number(this.carNum * 700) + Number(this.carNum2 * 750)
 			},
 			switch2Change: function(e) {
 
@@ -314,7 +360,7 @@
 	.carInfo {
 		color: #a8a8a8;
 		font-size: 22rpx;
-		margin-top: 12rpx;
+		margin: 12rpx 0;
 	}
 
 	.carLeft {
@@ -325,5 +371,52 @@
 		color: #FF5A00;
 		font-size: 28rpx;
 		margin-top: 16rpx;
+	}
+
+	.carTelBtn {
+		width: 120rpx;
+		height: 40rpx;
+		background: #eff7ff;
+		border-radius: 2.5rpx;
+		color: #1a1a1a;
+		font-size: 22rpx;
+		text-align: center;
+		line-height: 40rpx;
+	}
+
+	.affirmView {
+		position: fixed;
+		bottom: 0;
+		height: 110rpx;
+		background: #fff;
+		left: 0;
+		right: 0;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 0 20rpx;
+	}
+
+	.affirmViewLeft {
+		display: flex;
+		align-items: center;
+		font-size: 32rpx;
+		color: #a8a8a8;
+	}
+
+	.affirmPrice {
+		color: #FF5A00;
+	}
+
+	.affirmViewRight {
+		width: 240rpx;
+		height: 88rpx;
+		background: #1485ee;
+		border-radius: 44rpx;
+		font-size: 32rpx;
+		text-align: center;
+		color: #ffffff;
+		line-height: 88rpx;
+		;
 	}
 </style>

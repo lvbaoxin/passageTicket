@@ -189,7 +189,11 @@ var _default = {
       plateShow: false,
       getCar: false,
       index: 0,
-      array: ['轿车']
+      array: ['轿车'],
+      carNum: 0,
+      carNum2: 0,
+      affirmPrice: 0,
+      numberValue: 0
     };
   },
   components: {
@@ -217,7 +221,12 @@ var _default = {
       this.$refs.popUp.open();
     },
     changeValue: function changeValue(value) {
-      console.log('返回数值：', value);
+      this.carNum = value;
+      this.affirmPrice = Number(this.carNum * 700) + Number(this.carNum2 * 750);
+    },
+    changeValue2: function changeValue2(value) {
+      this.carNum2 = value;
+      this.affirmPrice = Number(this.carNum * 700) + Number(this.carNum2 * 750);
     },
     switch2Change: function switch2Change(e) {
       this.getCar = e.detail.value;
