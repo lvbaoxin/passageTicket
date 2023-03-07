@@ -1,9 +1,9 @@
 <template>
 	<view class="ticketView">
 		<uni-collapse class='ticketCollBg' v-for="(item,index) in arr" :key="index">
-			<uni-collapse-item titleBorder="none" :show-arrow=false>
+			<uni-collapse-item titleBorder="none" :show-arrow=false :border="false">
 				<template v-slot:title>
-					<view class="">
+					<view>
 						<view class="forFlex justifyBetween">
 							<view class="ticketListLeft">
 								<view class="ticketInfo">
@@ -31,17 +31,32 @@
 						</view>
 					</view>
 				</template>
-				<view class="content">
-					<view class="myTab">
-						<view @click="tabCur(item,0)" :class="{active:item.cur==0}">绩效奖</view>
-						<view @click="tabCur(item,1)" :class="{active:item.cur==1}">其他奖项</view>
+				<view >
+					<view class="ticketBuyAdd">
+						<uni-icons type="plus" color='#1485ee' size="26"></uni-icons>乘客预定
+
+						<!-- <view @click="tabCur(item,0)" :class="{active:item.cur==0}">绩效奖</view>
+						<view @click="tabCur(item,1)" :class="{active:item.cur==1}">其他奖项</view> -->
 					</view>
-					<view v-show="item.cur==0">
-						0
+					
+					<view class="ticketTypeList" v-for='(v,i) in item.list' :key="i">
+						<view class="ticketTypePic">
+							 <image  class="ticketTypePic" mode="heightFix" :src="v.src"
+							                        ></image>
+						</view>
+						<view class="ticketMid">
+							<view class="forFlex">
+								<view class="ticketTypeTitle">{{v.ticketTypeTitle}}</view>
+								<view class="ticketTypeNum">余票：{{v.ticketTypeNum}}张</view>
+							</view>
+							<view class="ticketTypeAbout">{{v.ticketTypeTitle}}</view>
+						</view>
+						<view class="ticketTypeRight">
+							<view class="ticketTypePrice">￥{{v.ticketTypePrice}}</view>
+							<view class="ticketTypeBtn">预定</view>
+						</view>
 					</view>
-					<view v-show="item.cur==1">
-						1
-					</view>
+					
 				</view>
 			</uni-collapse-item>
 
@@ -57,14 +72,9 @@
 			return {
 				value: ['0'],
 				accordionVal: '1',
-				content: '折叠内容主体，可自定义内容及样式，点击按钮修改内容使高度发生变化。',
-				extraIcon: {
-					color: '#4cd964',
-					size: '26',
-					type: 'image'
-				},
 				cur: 0, // 默认选中第一个值
-				arr: []
+				arr: [],
+				src:'../../static/images/1.jpg'
 			};
 		},
 		props: {
@@ -97,7 +107,7 @@
 						// });
 
 					}
-					console.log(this.arr,'arr2')
+					console.log(this.arr, 'arr2')
 					return item
 				})
 
@@ -108,9 +118,9 @@
 </script>
 
 <style>
-	.ticketView {
+	/* .ticketView {
 		margin-top: 150rpx;
-	}
+	} */
 
 	.ticketView .uni-collapse {
 		background: transparent;
@@ -121,38 +131,50 @@
 		width: 90%;
 	}
 
-	.myTab {
+	.ticketBuyAdd {
 		display: flex;
-		font-size: 14px;
-		width: 92%;
-		padding: 4px 0;
-		margin: 12px auto 0;
-		background: #fff;
+		align-items: center;
+		justify-content: center;
+		color: #1485ee;
+		padding:10rpx 0;
 	}
-
-	.myTab li {
-		font-size: 14px;
-		color: #a7abbc;
-		margin-right: 26px;
-		height: 26px;
+	.ticketTypeList{
+		display:flex;align-items: center;
+		justify-content: space-between;
 	}
-
-	.myTab li.active {
-		/*border-bottom:4px solid rgb(4, 96, 169);*/
-		color: rgb(4, 96, 169);
-		font-size: 16px;
-		font-weight: bold;
-		position: relative;
+	.ticketTypePic{
+		width: 120rpx;
+		height: 90rpx;
+		border-radius: 5rpx;
 	}
-
-	.myTab li.active::after {
-		content: '';
-		position: absolute;
-		bottom: 0;
-		background: rgb(4, 96, 169);
-		width: 100%;
-		height: 4px;
-		left: 0px;
-		border-radius: 8px;
+	.ticketTypeTitle{
+		font-size: 30rpx;
+	}
+	.ticketTypeNum{
+	color: #1485ee;
+		font-size: 24rpx;
+		margin-left: 10rpx;
+	}
+	.ticketTypeAbout{
+		margin-top: 10rpx;
+		color: #a7a7a7;
+		font-size: 24rpx;
+	}
+	.ticketTypePrice{
+		text-align: right;
+		font-size: 36rpx;
+		margin-bottom: 10rpx;
+		color: #FF5A00;
+	}
+	.ticketTypeBtn{
+		font-size: 30rpx;
+		width: 120rpx;
+		height: 60rpx;
+		background: #1485ee;
+		border-radius: 5rpx;
+		text-align: center;
+		line-height: 60rpx;
+		color:#fff;
+		float: right;
 	}
 </style>

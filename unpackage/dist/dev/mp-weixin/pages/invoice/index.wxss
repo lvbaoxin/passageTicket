@@ -1,0 +1,32 @@
+
+.userItem {
+	height: 100rpx;
+	border-bottom: 1rpx solid #a8a8a8;
+	display: flex;
+	align-items: center;
+	padding: 0 20rpx;
+	background: #fff;
+}
+.userItem .title {
+	/* font-size: 30rpx; */
+	color: #a7a7a7;
+	line-height: 100rpx;
+}
+.userItemInput {
+	height: 100rpx;
+	background: #fff;
+	margin-left: 20rpx;
+	line-height: 100rpx;
+}
+.submitBtn {
+	width: 590rpx;
+	height: 88rpx;
+	background: #1485ee;
+	border-radius: 44rpx;
+	color: #fff;
+	font-size: 32rpx;
+	line-height: 88rpx;
+	margin: 80rpx auto 0;
+	text-align: center;
+}
+

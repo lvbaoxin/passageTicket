@@ -15,37 +15,33 @@
 
 /*每个页面公共css */
 
+page{
+	background: #eee;
+}
 .forPos {
 	position: relative;
 }
-
 .forFlex {
 	display: flex;
 	align-items: center
 }
-
 .justifyCenter {
 	justify-content: center;
 }
-
 .justifyBetween{
 	justify-content: space-between;
 }
-
 .w90 {
 	width: 90%;
 	margin: 0 auto;
 }
-
 .textr{
 	text-align: right;
 }
-
 .bg {
 		background: #eee;
-		height: 100vh;
+		/* height: 100vh; */
 	}
-
 .noticeView {
 	z-index: 2;
 	width: 650rpx;
@@ -65,23 +61,19 @@
 	-webkit-transform: translate(10px, 30px);
 	        transform: translate(10px, 30px);
 }
-
 .cityTitle {
 	font-size: 24rpx;
 	color: #a8a8a8;
 }
-
 .cityItem {
 	width: 40%;
 	border-bottom: 1rpx solid #A8A8A8;
 	padding-bottom: 30rpx;
 }
-
 .cityInput {
 	margin-top: 10rpx;
 	color: #1A1A1A;
 }
-
 .cityView {
 	display: flex;
 	width: 90%;
@@ -90,16 +82,13 @@
 	justify-content: space-between;
 	height: 160rpx;
 }
-
 .dateView {
 	width: 90%;
 	margin: 0 auto;
 }
-
 .dateInput {
 	color: #1A1A1A;
 }
-
 .ticketSearchBtn {
 	width: 650rpx;
 	height: 88rpx;
@@ -112,14 +101,12 @@
 	color: #ffffff;
 	line-height: 88rpx;
 }
-
 .ticketAboutBtn {
 	font-size: 24rpx;
 	color: #a8a8a8;
 	margin: 0 auto;
 	text-align: center;
 }
-
 .copyRight {
 	font-size: 24rpx;
 	color: #a8a8a8;

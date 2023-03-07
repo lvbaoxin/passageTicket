@@ -2,7 +2,7 @@
 .dateTop {
 	background: #fff;
 	position: fixed;
-	top: 0px;
+	bottom: 0px;
 	height: 130rpx;
 	display: flex;
 	align-items: center;
@@ -14,7 +14,7 @@
 	width: 48%;
 }
 .ticketView {
-	margin-top: 150rpx;
+	/* margin-top: 150rpx; */
 }
 .dateTopSelect {
 	width: 165rpx;
@@ -56,12 +56,13 @@
 	margin: 20rpx;
 }
 .ticketBuy {
+
 	width: 150rpx;
 	height: 60rpx;
 	line-height: 60rpx;
-
+	font-size: 26rpx;
 	color: #1485ee;
-	text-align: center;
+	text-align: right;
 }
 .ticketTime {
 	font-size: 32rpx;
@@ -98,7 +99,7 @@
 	display: initial;
 	font-size: 20rpx;
 	position: absolute;
-	right: 10rpx;
+	/* right: 10rpx; */
 	top: 0rpx;
 }
 .line {
@@ -109,7 +110,7 @@
 }
 .ticketListPrice {
 	color: red;
-	font-size: 28rpx;
+	font-size: 30rpx;
 }
 .ticketListPriceI {
 	color: #A8A8A8;

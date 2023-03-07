@@ -26,6 +26,47 @@
 				</view>
 			</view>
 			<view class="buyItem">
+				<uni-collapse>
+					<uni-collapse-item titleBorder="none" :border='false'>
+						<template v-slot:title>
+							<view class="forFlex justifyBetween">
+								<view class="forFlex justifyBetween">
+									<view class="ticketCollTitle">乘客</view>
+									<view class="ticketCollInfo">（单笔订单限5张票）</view>
+								</view>
+								<view class="ticketCollNum">
+									2人
+								</view>
+							</view>
+						</template>
+
+						<view class="collUserList" v-for="(item,index ) in userList" :key="index">
+							<view class="forFlex justifyBetween collUserItem">
+								<view class="collDel">
+									-
+								</view>
+								<view class="collFlex">
+									<view class="collUserName">{{item.name}}</view>
+									<view class="collUserIdcard">身份证：{{item.idCard}}</view>
+								</view>
+								<view class="collUserPrice">
+									￥{{item.price}}
+								</view>
+							</view>
+							<view class="collTypeItem">
+								<view>舱位</view>
+								<view>{{item.shippingSpace}}</view>
+							</view>
+							<view class="collTypeItem">
+								<view>票价类型</view>
+								<view>{{item.fareType}}</view>
+							</view>
+						</view>
+
+					</uni-collapse-item>
+				</uni-collapse>
+			</view>
+			<view class="buyItem">
 				<view class="addUser" @click="addUser">
 					<uni-icons type="plus" color='#1485ee' size="26"></uni-icons>添加乘客
 				</view>
@@ -44,7 +85,7 @@
 					<view class="carRight">
 						<view class='carPrice textr'>￥700.00</view>
 						<view class='carInfo textr'>余票:12张</view>
-						<uni-number-box @change="changeValue" background="#fff" color="#1485EE" :value="numberValue"/>
+						<uni-number-box @change="changeValue" background="#fff" color="#1485EE" :value="numberValue" />
 					</view>
 				</view>
 			</view>
@@ -80,11 +121,7 @@
 					</view>
 				</view>
 			</view>
-			<view class="affirmView">
-				<view class="affirmViewLeft">订单总额:<view class='affirmPrice'>￥{{affirmPrice}}</view>
-				</view>
-				<view class="affirmViewRight">确认订单</view>
-			</view>
+
 			<!-- <view class="buyItem" style='padding:0'>
 				<view class=' forFlex justifyBetween' style="padding:24rpx">
 					<view>
@@ -156,9 +193,46 @@
 
 
 
-
+		<view class="affirmView">
+			<view class="affirmViewLeft">订单总额:<view class='affirmPrice'>￥{{affirmPrice}}</view>
+			</view>
+			<view class="affirmViewRight">确认订单</view>
+		</view>
 		<plate-input v-if="plateShow" :plate="plateNo" @export="setPlate" @close="plateShow=false" />
 		<Popup ref='popUp'></Popup>
+		<Calltel ref='Calltel'></Calltel>
+		<view class='addUserViewBg' v-show='addUserViewBg'>
+			<view class='addUserInside'>
+				<view class='addUserTool'>
+					<view style="color:#A8A8A8;">取消</view>
+					<view style='color:#1485ee'>确认</view>
+				</view>
+				<view class="userList">
+					<view class="userItem">
+						<view class="userItemLeft">
+							<view>
+								<uni-icons type="compose" size="24" color='#A8A8A8'></uni-icons>
+							</view>
+							<view class="itemRight">
+								<view class="userName">
+									张三疯
+								</view>
+								<view class="userCardId">
+									身份证：124456185602134526
+								</view>
+							</view>
+
+						</view>
+						<view class="userItemRight">
+							<checkbox value="cb" style="transform:scale(0.7)" />
+						</view>
+					</view>
+				</view>
+				<view class="addUserToolsBtm" @click="addUser">
+					<uni-icons type="plus" color='#1485ee' size="26"></uni-icons>添加乘客
+				</view>
+			</view>
+		</view>
 	</view>
 
 </template>
@@ -166,6 +240,7 @@
 <script>
 	import plateInput from '../../components/uni-plate-input/uni-plate-input.vue'
 	import Popup from '../../components/popup/popup.vue'
+	import Calltel from '../../components/calltel/calltel.vue'
 	export default {
 		data() {
 			return {
@@ -178,12 +253,29 @@
 				carNum2: 0,
 				affirmPrice: 0,
 				numberValue: 0,
+				addUserViewBg: false,
+				userList: [{
+						'name': '张三疯',
+						'idCard': '124456185602134526',
+						'price': '200.00',
+						'shippingSpace': '坐席—坐席',
+						'fareType': '网络售票'
+					},
+					{
+						'name': '张三疯2',
+						'idCard': '124456185602134526',
+						'price': '200.00',
+						'shippingSpace': '坐席—坐席',
+						'fareType': '网络售票'
+					},
+				]
 			}
 		},
 
 		components: {
 			'plateInput': plateInput,
-			'Popup': Popup
+			'Popup': Popup,
+			'Calltel': Calltel
 		},
 		methods: {
 			setPlate(plate) {
@@ -385,7 +477,8 @@
 	}
 
 	.affirmView {
-		position: fixed;
+		z-index: 99;
+		position: sticky;
 		bottom: 0;
 		height: 110rpx;
 		background: #fff;
@@ -418,5 +511,139 @@
 		color: #ffffff;
 		line-height: 88rpx;
 		;
+	}
+
+	.addUserViewBg {
+		width: 100%;
+		height: 100vh;
+		background: rgba(0, 0, 0, 0.2);
+		position: absolute;
+		top: 0px;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		z-index: 999;
+	}
+
+	.addUserInside {
+		height: 580rpx;
+		background: #fff;
+		position: absolute;
+		bottom: 0;
+		padding: 20rpx;
+		left: 0;
+		right: 0;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+	}
+
+	.addUserTool {
+		height: 80rpx;
+		display: flex;
+		justify-content: space-between;
+		border-bottom: 1px solid #a8a8a8;
+		line-height: 80rpx;
+	}
+
+	.addUserToolsBtm {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		height: 80rpx;
+		border-top: 1px solid #a8a8a8;
+		color: #1485ee;
+	}
+
+	.userItem {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	.userItemLeft {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	.userList {
+		flex: 1;
+	}
+
+	.itemRight {
+		margin-left: 20rpx;
+	}
+
+	.userName {
+		font-size: 32rpx;
+		color: #1a1a1a;
+	}
+
+	.userCardId {
+		margin-top: 10rpx;
+		font-size: 22rpx;
+		color: #a7a7a7;
+	}
+
+	.ticketCollTitle {
+		color: #1A1A1A;
+		font-size: 32rpx;
+	}
+
+	.ticketCollInfo,
+	.ticketCollNum {
+		font-size: 26rpx;
+		color: #A7A7A7;
+	}
+
+	.collUserName {
+		font-size: 32rpx;
+		color: #1a1a1a;
+		margin-bottom: 16rpx;
+	}
+
+	.collUserIdcard {
+		font-size: 26rpx;
+		color: #A7A7A7;
+	}
+
+	.collUserPrice {
+		font-size: 32rpx;
+		color: #FF5A00;
+	}
+
+	.collFlex {
+		flex: 1;
+	}
+
+	.collDel {
+		text-align: center;
+		width: 40rpx;
+		height: 40rpx;
+		border: 1rpx solid #ff5a00;
+		margin-right: 20rpx;
+		border-radius: 40rpx;
+		color: #ff5a00;
+	}
+
+	.collUserItem {
+		/* margin:30rpx 0 0; */
+	}
+
+	.collUserList {
+		padding: 30rpx 0 0;
+	}
+
+	.buyItem .uni-collapse-item__title-arrow {
+		margin-right: 0px;
+	}
+
+	.collTypeItem {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		margin: 16rpx 0;
+		font-size: 26rpx;
 	}
 </style>

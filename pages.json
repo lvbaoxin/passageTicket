@@ -1,5 +1,12 @@
 {
 	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+		
+		{
+			"path": "pages/ticketBuyNext/index",
+			"style": {
+				"navigationBarTitleText": "确认订单"
+			}
+		},
 		{
 			"path": "pages/ticketBuy/index",
 			"style": {
@@ -9,31 +16,65 @@
 		{
 			"path": "pages/ticketList/index",
 			"style": {
-				"navigationBarTitleText": "渤海湾水路客运联网售票"
+				"navigationBarTitleText": "大连—烟台"
 			}
 		},
-		
 		{
-			"path": "pages/addUser/index",
+			"path": "pages/calendar/index",
 			"style": {
-				"navigationBarTitleText": "渤海湾水路客运联网售票"
+				"navigationBarTitleText": "日历"
 			}
 		},
-		
-		
 		{
 			"path": "pages/index/index",
 			"style": {
 				"navigationBarTitleText": "渤海湾水路客运联网售票"
 			}
 		},
-
+		
 		{
-			"path": "pages/calendar/index",
+			"path": "pages/orderDetails/index",
 			"style": {
-				"navigationBarTitleText": "渤海湾水路客运联网售票"
+				"navigationBarTitleText": "订单详情"
+			}
+		},
+		{
+			"path": "pages/addUser/index",
+			"style": {
+				"navigationBarTitleText": "新增乘客"
+			}
+		},
+		
+		{
+			"path": "pages/order/index",
+			"style": {
+				"navigationBarTitleText": "我的订单"
+			}
+		},
+		
+		{
+			"path": "pages/bindTel/index",
+			"style": {
+				"navigationBarTitleText": "绑定手机"
+			}
+		},
+		{
+			"path": "pages/personCenter/index",
+			"style": {
+				"navigationBarTitleText": "会员中心"
+			}
+		},
+		
+		{
+			"path": "pages/invoice/index",
+			"style": {
+				"navigationBarTitleText": "发票信息"
 			}
 		}
+		
+
+
+
 	],
 	"globalStyle": {
 		"navigationBarTextStyle": "white",

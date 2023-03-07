@@ -1,9 +1,12 @@
 {
   "navigationBarTitleText": "订单填写",
   "usingComponents": {
+    "uni-collapse": "/uni_modules/uni-collapse/components/uni-collapse/uni-collapse",
+    "uni-collapse-item": "/uni_modules/uni-collapse/components/uni-collapse-item/uni-collapse-item",
     "uni-icons": "/uni_modules/uni-icons/components/uni-icons/uni-icons",
     "uni-number-box": "/uni_modules/uni-number-box/components/uni-number-box/uni-number-box",
     "plate-input": "/components/uni-plate-input/uni-plate-input",
-    "popup": "/components/popup/popup"
+    "popup": "/components/popup/popup",
+    "calltel": "/components/calltel/calltel"
   }
 }

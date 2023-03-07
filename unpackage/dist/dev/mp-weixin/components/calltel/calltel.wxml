@@ -1,0 +1,1 @@
+<block wx:if="{{popUpShow}}"><view data-ref="Calltel" class="popUpBg vue-ref"><view class="popUpInside"><view class="popUpTop">咨询电话</view><view class="popUpTel">400-4587-458</view><view data-event-opts="{{[['tap',[['close',['$event']]]]]}}" class="popUpBtn" bindtap="__e">立即咨询</view></view></view></block>

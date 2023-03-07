@@ -1,3 +1,6 @@
+page{
+	background: #eee;
+}
 .forPos {
 	position: relative;
 }
@@ -23,7 +26,7 @@
 }
 .bg {
 		background: #eee;
-		height: 100vh;
+		/* height: 100vh; */
 	}
 .noticeView {
 	z-index: 2;

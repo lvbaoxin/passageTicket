@@ -1,5 +1,7 @@
 <template>
 	<view class="bg">
+		
+		<Collapse :ticketList="ticketList"></Collapse>
 		<view class="dateTop">
 			<view class='dateTopList'>
 				<view class="dateTopItem" v-for="(item,index) in dateTopList" :class="item.active" :key="index">
@@ -12,95 +14,6 @@
 				<view class="dateTopSelectBtn">按钮</view>
 			</view>
 		</view>
-
-		<Collapse :ticketList="ticketList"></Collapse>
-		<!-- 
-			<view class="ticketList">
-				<view class="forFlex justifyBetween">
-					<view class="ticketListLeft">
-						<view class="ticketInfo">
-							<view class='ticketTime'>23:00</view>
-							<view class='ticketCity'>大连湾综合 交通枢纽</view>
-						</view>
-						<view>
-							<view class='ticketDuration'>07:00</view>
-							<view class='ticketType'>棒棰岛—国企</view>
-						</view>
-						<view class="ticketInfo">
-							<view class='ticketTime'>06:00<i class="ticketI">+1</i></view>
-							<view class='ticketCity'>烟台客运站港</view>
-						</view>
-					</view>
-					<view class="ticketListRight">
-						<view class="forFlex justifyCenter">
-							<view class="ticketListPrice">￥200.00</view>
-							<view class="ticketListPriceI">起</view>
-						</view>
-						<view class="ticketBuy">
-							渤海翠珠
-						</view>
-					</view>
-				</view>
-				<view class="ticketTab">
-					<view>111</view>
-					<view>222</view>
-				</view>
-				<view class="ticketTabCont">
-					<view>111</view>
-					<view>222</view>
-				</view>
-			</view> -->
-
-		<!-- <uni-collapse class='ticketCollBg'>
-				<uni-collapse-item titleBorder="none" :show-arrow=false>
-					<template v-slot:title>
-						<view class="">
-							<view class="forFlex justifyBetween">
-								<view class="ticketListLeft">
-									<view class="ticketInfo">
-										<view class='ticketTime'>23:00</view>
-										<view class='ticketCity'>大连湾综合 交通枢纽</view>
-									</view>
-									<view>
-										<view class='ticketDuration'>07:00</view>
-										<view class='ticketType'>棒棰岛—国企</view>
-									</view>
-									<view class="ticketInfo">
-										<view class='ticketTime'>06:00<i class="ticketI">+1</i></view>
-										<view class='ticketCity'>烟台客运站港</view>
-									</view>
-								</view>
-								<view class="ticketListRight">
-									<view class="forFlex justifyCenter">
-										<view class="ticketListPrice">￥200.00</view>
-										<view class="ticketListPriceI">起</view>
-									</view>
-									<view class="ticketBuy">
-										渤海翠珠
-									</view>
-								</view>
-							</view>
-						</view>
-					</template>
-					<view class="content">
-						<view class="myTab">
-							<view @click="tabCur(0)" :class="{active:cur==0}">绩效奖</view>
-							<view @click="tabCur(1)" :class="{active:cur==1}">其他奖项</view>
-						</view>
-						<view v-show="cur==0">
-							0
-						</view>
-						<view v-show="cur==1">
-							1
-						</view>
-					</view>
-				</uni-collapse-item>
-
-
-			</uni-collapse> -->
-
-
-
 	</view>
 
 </template>
@@ -154,32 +67,50 @@
 					size: '26',
 					type: 'image'
 				},
-				ticketList:[
-					{
-						"id":0,
-						"startOffTime":"22:00",
-						"startOffCity":"大连湾综合交通枢纽",
-						"arriveTime":"6:00",
-						"arriveCity":"烟台客运站港",
-						"ticketDuration":"07:00",
-						"ticketType":"棒棰岛—国企",
-						"ticketPrice":"200.00",
-						"ticketName":"渤海翠珠",
-						"cur":0
+				ticketList: [{
+						"id": 0,
+						"startOffTime": "22:00",
+						"startOffCity": "大连湾综合交通枢纽",
+						"arriveTime": "6:00",
+						"arriveCity": "烟台客运站港",
+						"ticketDuration": "07:00",
+						"ticketType": "棒棰岛—国企",
+						"ticketPrice": "200.00",
+						"ticketName": "渤海翠珠",
+						"cur": 0,
+						"list": [{
+								"ticketTypeTitle": '四等特—卧铺',
+								"ticketTypeNum": '24',
+								"ticketTypePrice": '200.00',
+								"src": '../../static/images/1.jpg'
+							},
+							{
+								"ticketTypeTitle": '三等特—卧铺',
+								"ticketTypeNum": '22',
+								"ticketTypePrice": '230.00',
+								"src": '../../static/images/2.jpg'
+							}
+						]
 					},
 					{
-						"id":1,
-						"startOffTime":"23:00",
-						"startOffCity":"大连湾综合交通枢纽",
-						"arriveTime":"6:00",
-						"arriveCity":"烟台客运站港",
-						"ticketDuration":"07:00",
-						"ticketType":"棒棰岛—国企",
-						"ticketPrice":"100.00",
-						"ticketName":"翠珠",
-						"cur":0
+						"id": 1,
+						"startOffTime": "23:00",
+						"startOffCity": "大连湾综合交通枢纽",
+						"arriveTime": "6:00",
+						"arriveCity": "烟台客运站港",
+						"ticketDuration": "07:00",
+						"ticketType": "棒棰岛—国企",
+						"ticketPrice": "100.00",
+						"ticketName": "翠珠",
+						"cur": 0,
+						"list": [{
+							"ticketTypeTitle": '四等特—卧铺',
+							"ticketTypeNum": '20',
+							"ticketTypePrice": '100.00',
+							"src": '../../static/images/3.jpg'
+						}, ]
 					},
-					
+
 				],
 				cur: 0, // 默认选中第一个值
 			}
@@ -199,7 +130,7 @@
 	.dateTop {
 		background: #fff;
 		position: fixed;
-		top: 0px;
+		bottom: 0px;
 		height: 130rpx;
 		display: flex;
 		align-items: center;
@@ -213,7 +144,7 @@
 	}
 
 	.ticketView {
-		margin-top: 150rpx;
+		/* margin-top: 150rpx; */
 	}
 
 	.dateTopSelect {
@@ -264,12 +195,13 @@
 	}
 
 	.ticketBuy {
+
 		width: 150rpx;
 		height: 60rpx;
 		line-height: 60rpx;
-
+		font-size: 26rpx;
 		color: #1485ee;
-		text-align: center;
+		text-align: right;
 	}
 
 	.ticketTime {
@@ -313,7 +245,7 @@
 		display: initial;
 		font-size: 20rpx;
 		position: absolute;
-		right: 10rpx;
+		/* right: 10rpx; */
 		top: 0rpx;
 	}
 
@@ -326,7 +258,7 @@
 
 	.ticketListPrice {
 		color: red;
-		font-size: 28rpx;
+		font-size: 30rpx;
 	}
 
 	.ticketListPriceI {

@@ -1,10 +1,16 @@
 {
   "pages": [
+    "pages/ticketBuyNext/index",
     "pages/ticketBuy/index",
     "pages/ticketList/index",
-    "pages/addUser/index",
+    "pages/calendar/index",
     "pages/index/index",
-    "pages/calendar/index"
+    "pages/orderDetails/index",
+    "pages/addUser/index",
+    "pages/order/index",
+    "pages/bindTel/index",
+    "pages/personCenter/index",
+    "pages/invoice/index"
   ],
   "subPackages": [],
   "window": {

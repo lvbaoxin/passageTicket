@@ -68,7 +68,9 @@
 </script>
 
 <style>
-
+page{
+	background:#fff;
+}
 
 
 </style>
