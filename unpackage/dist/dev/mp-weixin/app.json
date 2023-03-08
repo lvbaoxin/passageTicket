@@ -1,8 +1,8 @@
 {
   "pages": [
+    "pages/ticketList/index",
     "pages/ticketBuyNext/index",
     "pages/ticketBuy/index",
-    "pages/ticketList/index",
     "pages/calendar/index",
     "pages/index/index",
     "pages/orderDetails/index",

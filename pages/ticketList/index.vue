@@ -1,10 +1,7 @@
 <template>
 	<view class="bg">
-		<drop-down :filterData="filterData" @confirm="confirm" @reset="reset">
-			<template #title="{title}">
-				{{showTitle(title)}}
-			</template>
-		</drop-down>
+		<sl-filter :ref="'slFilter'" :topFixed="true" :isTransNav="true" :navHeight="0" :color="titleColor"
+			:themeColor="themeColor" :menuList="menuList" @result="result"></sl-filter>
 		<Collapse :ticketList="ticketList"></Collapse>
 		<view class="dateTop">
 			<view class='dateTopList'>
@@ -19,14 +16,13 @@
 			</view>
 		</view>
 	</view>
-
 </template>
 
 <script>
-// 引入 api 下的 index 文件
+	// 引入 api 下的 index 文件
 	const $api = require('@/api/index')
-	import data from '@/static/js/data.js'; //筛选菜单数据
 	import Collapse from '../../components/collapse/collapse.vue'
+	import slFilter from '@/components/sl-filter/sl-filter.vue';
 	export default {
 		data() {
 			return {
@@ -68,7 +64,6 @@
 				],
 				value: ['0'],
 				accordionVal: '1',
-				content: '折叠内容主体，可自定义内容及样式，点击按钮修改内容使高度发生变化。',
 				extraIcon: {
 					color: '#4cd964',
 					size: '26',
@@ -120,8 +115,119 @@
 
 				],
 				cur: 0, // 默认选中第一个值
-				filterData: [],
-				fileds: 'name'
+				themeColor: '#1485ee',
+				titleColor: '#1A1A1A',
+				filterResult: '',
+				menuList: [{
+						'title': '出发港口',
+						'detailTitle': '请选择职位类型（可多选）(默认值为[1,2,5])',
+						'isMutiple': true,
+						'key': 'jobType',
+						'defaultSelectedIndex': [1, 2],
+						'detailList': [{
+								'title': '不限',
+								'value': ''
+							},
+							{
+								'title': 'uni-app',
+								'value': 'uni-app'
+							},
+							{
+								'title': 'java开发',
+								'value': 'java'
+							},
+							{
+								'title': 'web开发',
+								'value': 'web'
+							},
+							{
+								'title': 'Android开发',
+								'value': 'Android'
+							},
+
+						]
+					},
+					{
+						'title': '到达港口',
+						'key': 'salary',
+						'isMutiple': true,
+						'detailList': [{
+								'title': '不限',
+								'value': ''
+							},
+							{
+								'title': '0~2000',
+								'value': '0~2000'
+							},
+							{
+								'title': '2000~3000',
+								'value': '2000~3000'
+							},
+							{
+								'title': '3000~4000',
+								'value': '3000~4000'
+							},
+							{
+								'title': '4000~5000',
+								'value': '4000~5000'
+							},
+							{
+								'title': '5000~6000',
+								'value': '5000~6000'
+							}
+						]
+					},
+					{
+						'title': '开船时间',
+						'key': 'single',
+						'isMutiple': false,
+						'reflexTitle': false,
+						'detailTitle': '请选择（单选）(默认值为1)',
+						'defaultSelectedIndex': 1,
+						'detailList': [{
+								'title': '不限',
+								'value': ''
+							},
+							{
+								'title': '条件1',
+								'value': 'test_1'
+							},
+							{
+								'title': '条件2',
+								'value': 'test_2'
+							},
+							{
+								'title': '条件3',
+								'value': 'test_3'
+							},
+
+						]
+					},
+					// {
+					// 	'title': '排序',
+					// 	'key': 'sort',
+					// 	'isSort': true,
+					// 	'reflexTitle': true,
+					// 	'defaultSelectedIndex': 2,
+					// 	'detailList': [{
+					// 			'title': '默认排序',
+					// 			'value': ''
+					// 		},
+					// 		{
+					// 			'title': '发布时间',
+					// 			'value': 'add_time'
+					// 		},
+					// 		{
+					// 			'title': '薪资最高',
+					// 			'value': 'wages_up'
+					// 		},
+					// 		{
+					// 			'title': '离我最近',
+					// 			'value': 'location'
+					// 		}
+					// 	]
+					// }
+				]
 			}
 		},
 		computed: {
@@ -133,8 +239,10 @@
 			},
 		},
 		components: {
-			'Collapse': Collapse
+			'Collapse': Collapse,
+			'slFilter': slFilter
 		},
+		
 		methods: {
 			tabCur(e) {
 				this.cur = e
@@ -145,14 +253,18 @@
 			reset(val) {
 				this.defaultVal = val
 			},
-			 // 在方法中调用
-			  goList() {
-			  
-			    let data = {}
-			    $api.getNavList(data).then((res) => {
-			      console.log(res, 'res');
-			    })
-			  }
+			// 在方法中调用
+			goList() {
+
+				let data = {}
+				$api.getNavList(data).then((res) => {
+					console.log(res, 'res');
+				})
+			},
+			result(val) {
+				console.log('filter_result:' + JSON.stringify(val));
+				this.filterResult = JSON.stringify(val, null, 2)
+			},
 		}
 	}
 </script>
@@ -308,9 +420,7 @@
 		flex: 1;
 	}
 
-	.content {
-		padding: 15px;
-	}
+	
 
 	.text {
 		font-size: 14px;
@@ -333,38 +443,5 @@
 		width: 90%;
 	}
 
-	.myTab {
-		display: flex;
-		font-size: 14px;
-		width: 92%;
-		padding: 4px 0;
-		margin: 12px auto 0;
-		background: #fff;
-	}
-
-	.myTab li {
-		font-size: 14px;
-		color: #a7abbc;
-		margin-right: 26px;
-		height: 26px;
-	}
-
-	.myTab li.active {
-		/*border-bottom:4px solid rgb(4, 96, 169);*/
-		color: rgb(4, 96, 169);
-		font-size: 16px;
-		font-weight: bold;
-		position: relative;
-	}
-
-	.myTab li.active::after {
-		content: '';
-		position: absolute;
-		bottom: 0;
-		background: rgb(4, 96, 169);
-		width: 100%;
-		height: 4px;
-		left: 0px;
-		border-radius: 8px;
-	}
+	
 </style>
