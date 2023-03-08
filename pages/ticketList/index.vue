@@ -1,6 +1,10 @@
 <template>
 	<view class="bg">
-		
+		<drop-down :filterData="filterData" @confirm="confirm" @reset="reset">
+			<template #title="{title}">
+				{{showTitle(title)}}
+			</template>
+		</drop-down>
 		<Collapse :ticketList="ticketList"></Collapse>
 		<view class="dateTop">
 			<view class='dateTopList'>
@@ -19,6 +23,9 @@
 </template>
 
 <script>
+// 引入 api 下的 index 文件
+	const $api = require('@/api/index')
+	import data from '@/static/js/data.js'; //筛选菜单数据
 	import Collapse from '../../components/collapse/collapse.vue'
 	export default {
 		data() {
@@ -113,7 +120,17 @@
 
 				],
 				cur: 0, // 默认选中第一个值
+				filterData: [],
+				fileds: 'name'
 			}
+		},
+		computed: {
+			showTitle() {
+				return (item) => {
+					return (item.checkedName && item.checkedName.length) ? item.checkedName.join('/') : item[this
+						.fileds]
+				}
+			},
 		},
 		components: {
 			'Collapse': Collapse
@@ -121,7 +138,21 @@
 		methods: {
 			tabCur(e) {
 				this.cur = e
-			}
+			},
+			confirm(e) {
+				console.log('eeee', e);
+			},
+			reset(val) {
+				this.defaultVal = val
+			},
+			 // 在方法中调用
+			  goList() {
+			  
+			    let data = {}
+			    $api.getNavList(data).then((res) => {
+			      console.log(res, 'res');
+			    })
+			  }
 		}
 	}
 </script>
