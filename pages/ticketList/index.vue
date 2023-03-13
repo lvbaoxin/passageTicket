@@ -15,6 +15,40 @@
 				<view class="dateTopSelectBtn">按钮</view>
 			</view>
 		</view>
+		<view class='addUserViewBg' v-show='swiperInside'>
+			<view class='swiperInside'>
+				<view class='addUserTool'>
+					<image class="ticketTypePic" mode="heightFix" :src="imgSrc"></image>
+				</view>
+				<view class="userItem">
+					<view class="userItemLeft">
+
+						<view class="itemRight">
+							<view class="forFlex">
+								<view class="userName">
+									散席—硬座
+								</view>
+								<view class='ticketBuyInfo'>余票:12张</view>
+							</view>
+
+							<view class="userCardId">
+								四等特—卧铺
+							</view>
+						</view>
+
+					</view>
+					<view class="userItemRight">
+						<view class="collUserPrice">
+							￥100.0
+						</view>
+					</view>
+				</view>
+				<view class='submitBtn'>
+					预定
+				</view>
+
+			</view>
+		</view>
 	</view>
 </template>
 
@@ -26,6 +60,7 @@
 	export default {
 		data() {
 			return {
+				imgSrc: '../../static/images/1.jpg',
 				dateTopList: [{
 						'dateDay': 25,
 						'dateWeek': '星期日',
@@ -227,7 +262,8 @@
 					// 		}
 					// 	]
 					// }
-				]
+				],
+				swiperInside:false
 			}
 		},
 		computed: {
@@ -242,7 +278,7 @@
 			'Collapse': Collapse,
 			'slFilter': slFilter
 		},
-		
+
 		methods: {
 			tabCur(e) {
 				this.cur = e
@@ -420,7 +456,7 @@
 		flex: 1;
 	}
 
-	
+
 
 	.text {
 		font-size: 14px;
@@ -443,5 +479,78 @@
 		width: 90%;
 	}
 
-	
+	.addUserViewBg {
+		width: 100%;
+		height: 100vh;
+		background: rgba(0, 0, 0, 0.2);
+		position: fixed;
+		top: 0px;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		z-index: 999;
+	}
+
+	.swiperInside {
+		background: #fff;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		border-radius: 10rpx;
+		width: 95%;
+		overflow: hidden;
+	}
+
+	.addUserTool {
+		overflow: hidden;
+	}
+
+	.submitBtn {
+		width: 590rpx;
+		height: 88rpx;
+		background: #1485ee;
+		border-radius: 44rpx;
+		color: #fff;
+		font-size: 32rpx;
+		line-height: 88rpx;
+		margin: 60rpx auto 30rpx;
+		text-align: center;
+	}
+
+	.userItem {
+		display: flex;
+		justify-content: space-between;
+		padding: 24rpx;
+		overflow: hidden;
+	}
+
+	.userItem .title {
+		width: 170rpx;
+		/* font-size: 30rpx; */
+		color: #a7a7a7;
+
+	}
+
+	.ticketBuyInfo {
+		color: #1485EE;
+		font-size: 24rpx;
+		margin: 0 12rpx;
+	}
+
+	.userName {
+		font-size: 32rpx;
+		color: #1a1a1a;
+	}
+
+	.userCardId {
+		margin-top: 10rpx;
+		font-size: 24rpx;
+		color: #a7a7a7;
+	}
+
+	.collUserPrice {
+		font-size: 34rpx;
+		color: #FF5A00;
+	}
 </style>

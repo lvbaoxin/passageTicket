@@ -128,21 +128,29 @@
 
 
 
+
+
 /* .ticketView {
 	margin-top: 150rpx;
 } */
-.addCarBtn{
+.addCarView {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	height: 100rpx;
+}
+.addCarBtn {
 	width: 120rpx;
 	height: 60rpx;
 	background: #1485ee;
 	border-radius: 5rpx;
 	color: #fff;
 	text-align: center;
-	line-height: ;
+	line-height: 60rpx;
 }
 .orderInfoTitle {
 	color: #1a1a1a;
-	height: 60rpx;
+	line-height: 60rpx;
 }
 .ticketView .uni-collapse {
 	background: transparent;
@@ -205,13 +213,13 @@
 	justify-content: space-between;
 	height: 88rpx;
 	background: #fff;
-	border-bottom:1rpx solid #A8A8A8;
+	border-bottom: 1rpx solid #A8A8A8;
 }
 .collapseTabItem {
 	text-align: center;
 	color: #1A1A1A;
 	font-size: 32rpx;
-	border-bottom:5rpx solid transparent;
+	border-bottom: 5rpx solid transparent;
 	flex: 1;
 	line-height: 88rpx;
 }
