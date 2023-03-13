@@ -48,7 +48,7 @@ page{
 	height: 80rpx;
 	background: #eff7ff;
 	border-radius: 20rpx 20rpx 0rpx 0rpx;
-	font-size: 22rpx;
+	font-size: 26rpx;
 	font-family: Source Han Sans CN, Source Han Sans CN-Regular;
 	font-weight: 400;
 	color: #1a1a1a;
@@ -64,6 +64,8 @@ page{
 .cityTitle {
 	font-size: 24rpx;
 	color: #a8a8a8;
+	margin-bottom:20rpx;
+	margin-top:40rpx;
 }
 .cityItem {
 	width: 40%;
@@ -80,11 +82,16 @@ page{
 	margin: 40rpx auto 0;
 	align-items: center;
 	justify-content: space-between;
-	height: 160rpx;
+	/* height: 160rpx; */
 }
 .dateView {
 	width: 90%;
 	margin: 0 auto;
+	border-bottom: 1rpx solid #A8A8A8;
+	height:109rpx;
+	display: flex;
+	align-items: center;
+	
 }
 .dateInput {
 	color: #1A1A1A;
@@ -111,7 +118,7 @@ page{
 	font-size: 24rpx;
 	color: #a8a8a8;
 	position: absolute;
-	bottom: 50rpx;
+	bottom: 0rpx;
 	left: 50%;
 	-webkit-transform: translate(-50%, -50rpx);
 	        transform: translate(-50%, -50rpx);

@@ -2,6 +2,7 @@
   "navigationBarTitleText": "渤海湾水路客运联网售票",
   "usingComponents": {
     "swiper": "/components/swiper/swiper",
-    "popup": "/components/popup/popup"
+    "popup": "/components/popup/popup",
+    "font-awesome": "/components/Am-FontAwesome/index"
   }
 }

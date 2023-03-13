@@ -65,7 +65,6 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
-
 	color: #1485ee;
 }
 .userItem {
@@ -165,14 +164,14 @@
 	width: 100%;
 	height: 100vh;
 	background: rgba(0, 0, 0, 0.2);
-	position: absolute;
+	position: fixed;
 	top: 0px;
 	bottom: 0;
 	left: 0;
 	right: 0;
 	z-index: 999;
 }
-.addUserInside {
+.addUserInside,.selectTicketInside{
 	height: 580rpx;
 	background: #fff;
 	position: absolute;
@@ -221,7 +220,7 @@
 }
 .userCardId {
 	margin-top: 10rpx;
-	font-size: 22rpx;
+	font-size:  24rpx;
 	color: #a7a7a7;
 }
 .ticketCollTitle {
@@ -243,7 +242,7 @@
 	color: #A7A7A7;
 }
 .collUserPrice {
-	font-size: 32rpx;
+	font-size: 34rpx;
 	color: #FF5A00;
 }
 .collFlex {
@@ -306,11 +305,79 @@
 	border-radius: 4px;
 	flex: 1;
 }
-.orderInfoText .uni-easyinput__content,.carNum .uni-easyinput__content {
+.orderInfoText .uni-easyinput__content,
+.carNum .uni-easyinput__content {
 	background: #eff7ff !important;
 }
 .peopleTitle {
 	width: 150rpx;
 	font-size: 28rpx;
+}
+.ticketAddress {
+	background: #fff;
+	position: absolute;
+	top: 50%;
+	width: calc(100% - 40rpx);
+	padding: 20rpx;
+	-webkit-transform: translate(-50% -50%);
+	        transform: translate(-50% -50%);
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+.ticketAddressTools {
+	height: 60rpx;
+	display: flex;
+	justify-content: space-between;
+	border-bottom: 1px solid #a8a8a8;
+}
+.ticketAddressTab {
+	margin-top:20rpx;
+}
+.ticketAddressTabItem {
+	width: 325rpx;
+	height: 60rpx;
+	background: #ffffff;
+	border: 1rpx solid #a8a8a8;
+	border-radius: 8rpx;
+	line-height: 60rpx;
+	text-align: center;
+	font-size: 30rpx;
+	color: #1a1a1a;
+	float: left;
+	margin: 10rpx;
+	position: relative;
+	overflow: hidden;
+}
+.ticketAddressTabItem.active {
+	border: 1rpx solid #1485EE;
+	color: #1485EE;
+}
+.ticketAddressTabItem.active:before {
+	content: '';
+	position: absolute;
+	right: 0;
+	top: -15rpx;
+	border-style: solid;
+	border-width: 0 50rpx 50rpx 0;
+	border-color: transparent #1485EE transparent transparent;
+	line-height: 0px;
+	_border-color: #000000 #1485EE #000000 #000000;
+	_filter: progid:DXImageTransform.Microsoft.Chroma(color='#000000');
+}
+.ticketAddressTabItem.active:after {
+	content: '✓';
+	position: absolute;
+	right: 0;
+	top: -15rpx;
+	color: #fff;
+	z-index: 1;
+	font-size: 20rpx;
+	line-height: 56rpx;
+}
+.ticketBuyInfo {
+	color: #1485EE;
+	font-size: 24rpx;
+	margin:  0 12rpx;
 }
 

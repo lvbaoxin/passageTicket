@@ -59,8 +59,29 @@
 				console.log(e)
 			},
 			//获取回调的日期数据
-			getDate(date) {
-				console.log(date)
+			getDate(dateObj) {
+				//console.log(dateObj.startStr)
+				this.getDateArr(dateObj.startStr)
+			},
+			 getDateArr(dataObj) {
+			  const dateArr = [];
+			  let date = new Date(dataObj.dateStr);
+			  const weeks = ['星期日','星期一','星期二','星期三','星期四','星期五','星期六'];
+			  // 获取当天
+			  dateArr.push({
+			    week: weeks[date.getDay()],
+			    dateDate: date.getDate()
+			  });
+			  // 获取未来6天
+			  for (let i = 0; i < 6; i++) {
+			    date.setDate(date.getDate() + 1);
+			    dateArr.push({
+			      week: weeks[date.getDay()],
+			      dateDat: date.getDate()
+			    });
+			  }
+			  console.log(dateArr)
+			  return dateArr;
 			}
 
 		}

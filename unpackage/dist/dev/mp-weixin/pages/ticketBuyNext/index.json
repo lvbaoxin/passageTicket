@@ -7,6 +7,7 @@
     "uni-easyinput": "/uni_modules/uni-easyinput/components/uni-easyinput/uni-easyinput",
     "plate-input": "/components/uni-plate-input/uni-plate-input",
     "popup": "/components/popup/popup",
-    "calltel": "/components/calltel/calltel"
+    "calltel": "/components/calltel/calltel",
+    "font-awesome": "/components/Am-FontAwesome/index"
   }
 }

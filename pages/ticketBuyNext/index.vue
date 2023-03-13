@@ -81,7 +81,7 @@
 					</view>
 					<view class="carNumTitle">车牌号：</view>
 					<view class="carNum">
-						<uni-easyinput  v-model="value"  placeholder="请输入车牌号"  :styles="styles"></uni-easyinput>
+						<uni-easyinput v-model="value" placeholder="请输入车牌号" :styles="styles"></uni-easyinput>
 					</view>
 				</view>
 				<view class="orderInfoText">
@@ -90,7 +90,7 @@
 					</view>
 					<view class="carNumTitle">车牌号：</view>
 					<view class="carNum">
-						<uni-easyinput  v-model="value"  placeholder="请输入车牌号"  :styles="styles"></uni-easyinput>
+						<uni-easyinput v-model="value" placeholder="请输入车牌号" :styles="styles"></uni-easyinput>
 					</view>
 				</view>
 			</view>
@@ -112,9 +112,13 @@
 				</view>
 				<view class="orderInfoText">
 					<view class="peopleTitle">取票地址</view>
-					<view class="carNumTitle">
-						<input type="text" placeholder="请输入取票地址">
+					<view class='forFlex justifyBetween' style="width:calc(100% - 173rpx);">
+						<view class="carNumTitle">
+							<input type="text"  placeholder="请输入取票地址" disabled>
+						</view>
+						<FontAwesome type="fas fa-angle-right" size="40" ></FontAwesome>
 					</view>
+					
 				</view>
 			</view>
 			<view class="orderBottomInfo">
@@ -239,7 +243,58 @@
 				</view>
 			</view>
 		</view>
+		<view class='addUserViewBg' v-show='ticketAddress'>
+			<view class="ticketAddress">
+				<view class="ticketAddressTools">
+					<view style="color:#A8A8A8;">取消</view>
+					<view style='color:#1485ee'>确认</view>
+				</view>
+				<view class="ticketAddressTab">
+					<view class="ticketAddressTabItem" @click="tabCur(0)" :class="{active:cur==0}">大连港</view>
+					<view class="ticketAddressTabItem" @click="tabCur(1)" :class="{active:cur==1}">大连湾新港</view>
+					<view class="ticketAddressTabItem" @click="tabCur(2)" :class="{active:cur==2}">大连湾港</view>
+					<view class="ticketAddressTabItem" @click="tabCur(3)" :class="{active:cur==3}">旅顺新港</view>
+				</view>
+			</view>
+		</view>
+		<view class='addUserViewBg' v-show='selectTicketInside'>
+			<view class='selectTicketInside'>
+				<view class='addUserTool'>
+					<view style="color:#A8A8A8;">取消</view>
+					<view style='color:#1485ee'>确认</view>
+				</view>
+				<view class="userList">
+					<view class="userItem">
+						<view class="userItemLeft">
+							<view>
+								<checkbox value="cb" style="transform:scale(0.7)" />
+							</view>
+							<view class="itemRight">
+								<view class="forFlex">
+									<view class="userName">
+										散席—硬座
+									</view>
+									<view class='ticketBuyInfo'>余票:12张</view>
+								</view>
+								
+								<view class="userCardId">
+									四等特—卧铺
+								</view>
+							</view>
+		
+						</view>
+						<view class="userItemRight">
+							<view class="collUserPrice">
+								￥100.0
+							</view>
+						</view>
+					</view>
+				</view>
+				
+			</view>
+		</view>
 	</view>
+	
 
 </template>
 
@@ -247,9 +302,11 @@
 	import plateInput from '../../components/uni-plate-input/uni-plate-input.vue'
 	import Popup from '../../components/popup/popup.vue'
 	import Calltel from '../../components/calltel/calltel.vue'
+	import FontAwesome from '@/components/Am-FontAwesome/index.vue'
 	export default {
 		data() {
 			return {
+				cur: 0,
 				plateNo: '',
 				plateShow: false,
 				getCar: false,
@@ -260,6 +317,8 @@
 				affirmPrice: 0,
 				numberValue: 0,
 				addUserViewBg: false,
+				ticketAddress: false,
+				selectTicketInside: false,
 				userList: [{
 						'name': '张三疯',
 						'idCard': '124456185602134526',
@@ -275,18 +334,19 @@
 						'fareType': '网络售票'
 					},
 				],
-				value:'',
+				value: '',
 				styles: {
-									color: '#2979FF',
-									borderColor: '#EFF7FF'
-								}
+					color: '#2979FF',
+					borderColor: '#EFF7FF'
+				}
 			}
 		},
 
 		components: {
 			'plateInput': plateInput,
 			'Popup': Popup,
-			'Calltel': Calltel
+			'Calltel': Calltel,
+			'FontAwesome':FontAwesome
 		},
 		methods: {
 			setPlate(plate) {
@@ -321,6 +381,9 @@
 			switch2Change: function(e) {
 
 				this.getCar = e.detail.value
+			},
+			tabCur(e) {
+				this.cur = e
 			}
 
 
@@ -410,7 +473,6 @@
 		display: flex;
 		align-items: center;
 		justify-content: center;
-
 		color: #1485ee;
 
 	}
@@ -528,7 +590,7 @@
 		width: 100%;
 		height: 100vh;
 		background: rgba(0, 0, 0, 0.2);
-		position: absolute;
+		position: fixed;
 		top: 0px;
 		bottom: 0;
 		left: 0;
@@ -536,7 +598,7 @@
 		z-index: 999;
 	}
 
-	.addUserInside {
+	.addUserInside ,.selectTicketInside{
 		height: 580rpx;
 		background: #fff;
 		position: absolute;
@@ -593,7 +655,7 @@
 
 	.userCardId {
 		margin-top: 10rpx;
-		font-size: 22rpx;
+		font-size:  24rpx;
 		color: #a7a7a7;
 	}
 
@@ -620,7 +682,7 @@
 	}
 
 	.collUserPrice {
-		font-size: 32rpx;
+		font-size: 34rpx;
 		color: #FF5A00;
 	}
 
@@ -695,12 +757,89 @@
 		border-radius: 4px;
 		flex: 1;
 	}
-	.orderInfoText .uni-easyinput__content ,.carNum .uni-easyinput__content {
+
+	.orderInfoText .uni-easyinput__content,
+	.carNum .uni-easyinput__content {
 		background: #eff7ff !important;
 	}
-	
+
 	.peopleTitle {
 		width: 150rpx;
 		font-size: 28rpx;
+	}
+
+	.ticketAddress {
+		background: #fff;
+		position: absolute;
+		top: 50%;
+		width: calc(100% - 40rpx);
+		padding: 20rpx;
+		transform: translate(-50% -50%);
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+	}
+
+	.ticketAddressTools {
+		height: 60rpx;
+		display: flex;
+		justify-content: space-between;
+		border-bottom: 1px solid #a8a8a8;
+	}
+
+	.ticketAddressTab {
+		margin-top:20rpx;
+	}
+
+	.ticketAddressTabItem {
+		width: 325rpx;
+		height: 60rpx;
+		background: #ffffff;
+		border: 1rpx solid #a8a8a8;
+		border-radius: 8rpx;
+		line-height: 60rpx;
+		text-align: center;
+		font-size: 30rpx;
+		color: #1a1a1a;
+		float: left;
+		margin: 10rpx;
+		position: relative;
+		overflow: hidden;
+	}
+
+
+	.ticketAddressTabItem.active {
+		border: 1rpx solid #1485EE;
+		color: #1485EE;
+	}
+
+	.ticketAddressTabItem.active:before {
+		content: '';
+		position: absolute;
+		right: 0;
+		top: -15rpx;
+		border-style: solid;
+		border-width: 0 50rpx 50rpx 0;
+		border-color: transparent #1485EE transparent transparent;
+		line-height: 0px;
+		_border-color: #000000 #1485EE #000000 #000000;
+		_filter: progid:DXImageTransform.Microsoft.Chroma(color='#000000');
+
+	}
+
+	.ticketAddressTabItem.active:after {
+		content: '✓';
+		position: absolute;
+		right: 0;
+		top: -15rpx;
+		color: #fff;
+		z-index: 1;
+		font-size: 20rpx;
+		line-height: 56rpx;
+	}
+	.ticketBuyInfo {
+		color: #1485EE;
+		font-size: 24rpx;
+		margin:  0 12rpx;
 	}
 </style>

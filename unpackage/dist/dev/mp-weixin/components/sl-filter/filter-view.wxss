@@ -34,12 +34,37 @@
 	margin: 10rpx;
 	color: #1A1A1A;
 	position: relative;
+	overflow: hidden;
+}
+.filter-content-active:before {
+	content: '';
+	position: absolute;
+	right: 0;
+	top: -15rpx;
+	border-style: solid;
+	border-width: 0 50rpx 50rpx 0;
+	border-color: transparent #1485EE transparent transparent;
+	line-height: 0px;
+	_border-color: #000000 #1485EE #000000 #000000;
+	_filter: progid:DXImageTransform.Microsoft.Chroma(color='#000000');
 }
 .filter-content-active:after {
 	content: '✓';
 	position: absolute;
-	right:0;top:-15rpx;
+	right: 0;
+	top: -15rpx;
+	color: #fff;
+	color: #fff;
+	z-index: 1;
+	font-size: 20rpx;
+	line-height: 56rpx;
 }
+
+/* .filter-content-active:after {
+	content: '✓';
+	position: absolute;
+	right:0;top:-15rpx;
+} */
 .filter-content-footer {
 	display: flex;
 	justify-content: space-between;

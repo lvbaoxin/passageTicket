@@ -13,9 +13,14 @@
   z-index: 900;
 }
 .calendar-tz .week-number.data-v-079c6f6c {
-  background: #fff;
   padding: 0 1%;
   box-shadow: 0 2px 15px rgba(100, 100, 100, 0.1);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: #fff;
+  z-index: 9;
 }
 .calendar-tz .week-number ._span.data-v-079c6f6c {
   display: inline-block;

@@ -118,9 +118,32 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
 /* .ticketView {
 	margin-top: 150rpx;
 } */
+.addCarBtn{
+	width: 120rpx;
+	height: 60rpx;
+	background: #1485ee;
+	border-radius: 5rpx;
+	color: #fff;
+	text-align: center;
+	line-height: ;
+}
+.orderInfoTitle {
+	color: #1a1a1a;
+	height: 60rpx;
+}
 .ticketView .uni-collapse {
 	background: transparent;
 	background: #ffffff;
@@ -134,37 +157,38 @@
 	align-items: center;
 	justify-content: center;
 	color: #1485ee;
-	padding:10rpx 0;
+	padding: 10rpx 0;
 }
-.ticketTypeList{
-	display:flex;align-items: center;
+.ticketTypeList {
+	display: flex;
+	align-items: center;
 	justify-content: space-between;
 }
-.ticketTypePic{
+.ticketTypePic {
 	width: 120rpx;
 	height: 90rpx;
 	border-radius: 5rpx;
 }
-.ticketTypeTitle{
+.ticketTypeTitle {
 	font-size: 30rpx;
 }
-.ticketTypeNum{
-color: #1485ee;
+.ticketTypeNum {
+	color: #1485ee;
 	font-size: 24rpx;
 	margin-left: 10rpx;
 }
-.ticketTypeAbout{
+.ticketTypeAbout {
 	margin-top: 10rpx;
 	color: #a7a7a7;
 	font-size: 24rpx;
 }
-.ticketTypePrice{
+.ticketTypePrice {
 	text-align: right;
 	font-size: 36rpx;
 	margin-bottom: 10rpx;
 	color: #FF5A00;
 }
-.ticketTypeBtn{
+.ticketTypeBtn {
 	font-size: 30rpx;
 	width: 120rpx;
 	height: 60rpx;
@@ -172,7 +196,27 @@ color: #1485ee;
 	border-radius: 5rpx;
 	text-align: center;
 	line-height: 60rpx;
-	color:#fff;
+	color: #fff;
 	float: right;
+}
+.collapseTab {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	height: 88rpx;
+	background: #fff;
+	border-bottom:1rpx solid #A8A8A8;
+}
+.collapseTabItem {
+	text-align: center;
+	color: #1A1A1A;
+	font-size: 32rpx;
+	border-bottom:5rpx solid transparent;
+	flex: 1;
+	line-height: 88rpx;
+}
+.collapseTabItem.active {
+	border-bottom: 5rpx solid #1485EE;
+	color: #1485EE;
 }
 

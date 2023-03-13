@@ -7,22 +7,23 @@
 			}
 		},
 		{
-			"path": "pages/ticketBuyNext/index",
-			"style": {
-				"navigationBarTitleText": "确认订单"
-			}
-		},
-		{
 			"path": "pages/ticketBuy/index",
 			"style": {
 				"navigationBarTitleText": "订单填写"
 			}
 		},
+		{
+			"path": "pages/ticketBuyNext/index",
+			"style": {
+				"navigationBarTitleText": "确认订单"
+			}
+		},
+		
 		
 		{
-			"path": "pages/calendar/index",
+			"path": "pages/orderDetails/index",
 			"style": {
-				"navigationBarTitleText": "日历"
+				"navigationBarTitleText": "订单详情"
 			}
 		},
 		{
@@ -31,13 +32,12 @@
 				"navigationBarTitleText": "渤海湾水路客运联网售票"
 			}
 		},
-		
 		{
-			"path": "pages/orderDetails/index",
+			"path": "pages/calendar/index",
 			"style": {
-				"navigationBarTitleText": "订单详情"
+				"navigationBarTitleText": "日历"
 			}
-		},
+		},		
 		{
 			"path": "pages/addUser/index",
 			"style": {
@@ -82,5 +82,29 @@
 		"navigationBarBackgroundColor": "#1485EE",
 		"backgroundColor": "#1485EE"
 	},
-	"uniIdRouter": {}
+	"uniIdRouter": {},
+	"tabBar": {
+		"color": "#7A7E83",
+		"selectedColor": "#1485EE",
+		"borderStyle": "black",
+		"backgroundColor": "#ffffff",
+		"list": [{
+			"pagePath": "pages/index/index",
+			"iconPath": "static/images/icon1.png",
+			"selectedIconPath": "static/images/icon1.png",
+			"text": "首页"
+		}, {
+			"pagePath": "pages/order/index",
+			"iconPath": "static/images/icon3.png",
+			"selectedIconPath": "static/images/icon3.png",
+			"text": "订单"
+		},
+		{
+			"pagePath": "pages/personCenter/index",
+			"iconPath": "static/images/icon5.png",
+			"selectedIconPath": "static/images/icon5.png",
+			"text": "我的"
+		}
+		]
+	}
 }

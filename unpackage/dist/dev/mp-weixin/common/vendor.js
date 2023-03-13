@@ -171,10 +171,10 @@ module.exports = _construct, module.exports.__esModule = true, module.exports["d
 
 /***/ }),
 
-/***/ 157:
-/*!**********************************************************************************!*\
-  !*** E:/源码/私活/passageTicket/uni_modules/uni-icons/components/uni-icons/icons.js ***!
-  \**********************************************************************************/
+/***/ 158:
+/*!**************************************************************************************!*\
+  !*** E:/site_view/passageTicket/uni_modules/uni-icons/components/uni-icons/icons.js ***!
+  \**************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -10329,9 +10329,9 @@ internalMixin(Vue);
 /***/ }),
 
 /***/ 26:
-/*!*****************************************!*\
-  !*** E:/源码/私活/passageTicket/pages.json ***!
-  \*****************************************/
+/*!*********************************************!*\
+  !*** E:/site_view/passageTicket/pages.json ***!
+  \*********************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -10503,9 +10503,9 @@ function normalizeComponent (
 /***/ }),
 
 /***/ 33:
-/*!***************************************************!*\
-  !*** E:/源码/私活/passageTicket/static/css/style.css ***!
-  \***************************************************/
+/*!*******************************************************!*\
+  !*** E:/site_view/passageTicket/static/css/style.css ***!
+  \*******************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -10531,17 +10531,17 @@ module.exports = _interopRequireDefault, module.exports.__esModule = true, modul
 
 /***/ }),
 
-/***/ 41:
-/*!*******************************************!*\
-  !*** E:/源码/私活/passageTicket/api/index.js ***!
-  \*******************************************/
+/***/ 40:
+/*!***********************************************!*\
+  !*** E:/site_view/passageTicket/api/index.js ***!
+  \***********************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var _request = __webpack_require__(/*! ./request */ 42);
+var _request = __webpack_require__(/*! ./request */ 41);
 module.exports = {
   // 获取导航
   getNavList: function getNavList(data) {
@@ -10551,17 +10551,17 @@ module.exports = {
 
 /***/ }),
 
-/***/ 42:
-/*!*********************************************!*\
-  !*** E:/源码/私活/passageTicket/api/request.js ***!
-  \*********************************************/
+/***/ 41:
+/*!*************************************************!*\
+  !*** E:/site_view/passageTicket/api/request.js ***!
+  \*************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 /* WEBPACK VAR INJECTION */(function(wx) {
 
-var _config = __webpack_require__(/*! ./config.js */ 43);
+var _config = __webpack_require__(/*! ./config.js */ 42);
 module.exports = {
   /*
    * url:请求的接口地址
@@ -10615,10 +10615,10 @@ module.exports = {
 
 /***/ }),
 
-/***/ 43:
-/*!********************************************!*\
-  !*** E:/源码/私活/passageTicket/api/config.js ***!
-  \********************************************/
+/***/ 42:
+/*!************************************************!*\
+  !*** E:/site_view/passageTicket/api/config.js ***!
+  \************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
