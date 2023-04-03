@@ -80,12 +80,12 @@
 		width: 100%;
 	}
 	.swiper {
-		height: 300rpx;
+		height: 360rpx;
 	}
 	.swiper-item {
 		display: block;
-		height: 300rpx;
-		line-height: 300rpx;
+		height: 360rpx;
+		line-height: 360rpx;
 		text-align: center;
 	}
 	.swiper-list {

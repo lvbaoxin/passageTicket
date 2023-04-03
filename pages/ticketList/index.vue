@@ -290,13 +290,13 @@
 				this.defaultVal = val
 			},
 			// 在方法中调用
-			goList() {
+			// goList() {
 
-				let data = {}
-				$api.getNavList(data).then((res) => {
-					console.log(res, 'res');
-				})
-			},
+			// 	let data = {}
+			// 	$api.getNavList(data).then((res) => {
+			// 		console.log(res, 'res');
+			// 	})
+			// },
 			result(val) {
 				console.log('filter_result:' + JSON.stringify(val));
 				this.filterResult = JSON.stringify(val, null, 2)

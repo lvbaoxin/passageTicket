@@ -171,7 +171,7 @@ module.exports = _construct, module.exports.__esModule = true, module.exports["d
 
 /***/ }),
 
-/***/ 158:
+/***/ 155:
 /*!**********************************************************************************!*\
   !*** E:/源码/私活/passageTicket/uni_modules/uni-icons/components/uni-icons/icons.js ***!
   \**********************************************************************************/
@@ -10531,7 +10531,7 @@ module.exports = _interopRequireDefault, module.exports.__esModule = true, modul
 
 /***/ }),
 
-/***/ 40:
+/***/ 48:
 /*!*******************************************!*\
   !*** E:/源码/私活/passageTicket/api/index.js ***!
   \*******************************************/
@@ -10541,17 +10541,17 @@ module.exports = _interopRequireDefault, module.exports.__esModule = true, modul
 "use strict";
 
 
-var _request = __webpack_require__(/*! ./request */ 41);
+var _request = __webpack_require__(/*! ./request */ 49);
 module.exports = {
-  // 获取导航
-  getNavList: function getNavList(data) {
-    return (0, _request.request)('nav/', 'GET', data);
+  // 获取文章详情
+  getArticles: function getArticles(data) {
+    return (0, _request.request)('portal/articles/1', 'GET', data);
   }
 };
 
 /***/ }),
 
-/***/ 41:
+/***/ 49:
 /*!*********************************************!*\
   !*** E:/源码/私活/passageTicket/api/request.js ***!
   \*********************************************/
@@ -10561,7 +10561,7 @@ module.exports = {
 "use strict";
 /* WEBPACK VAR INJECTION */(function(wx) {
 
-var _config = __webpack_require__(/*! ./config.js */ 42);
+var _config = __webpack_require__(/*! ./config.js */ 50);
 module.exports = {
   /*
    * url:请求的接口地址
@@ -10615,25 +10615,6 @@ module.exports = {
 
 /***/ }),
 
-/***/ 42:
-/*!********************************************!*\
-  !*** E:/源码/私活/passageTicket/api/config.js ***!
-  \********************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.baseUrl = void 0;
-var baseUrl = 'http://127.0.0.1:8000/';
-exports.baseUrl = baseUrl;
-
-/***/ }),
-
 /***/ 5:
 /*!**************************************************************!*\
   !*** ./node_modules/@babel/runtime/helpers/slicedToArray.js ***!
@@ -10652,6 +10633,394 @@ module.exports = _slicedToArray, module.exports.__esModule = true, module.export
 
 /***/ }),
 
+/***/ 50:
+/*!********************************************!*\
+  !*** E:/源码/私活/passageTicket/api/config.js ***!
+  \********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.baseUrl = void 0;
+var baseUrl = 'https://cmf.himvc.com/api/';
+exports.baseUrl = baseUrl;
+
+/***/ }),
+
+/***/ 59:
+/*!*******************************************!*\
+  !*** E:/源码/私活/passageTicket/utils/api.js ***!
+  \*******************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(wx) {
+
+__webpack_require__(/*! ./date */ 60);
+var app = getApp();
+var host = "https://cmf.himvc.com";
+var tryingLogin = false;
+module.exports = {
+  HOST: host,
+  API_ROOT: host + '/api/',
+  API_VERSION: '1.1.0',
+  post: function post(options) {
+    this.request(options);
+  },
+  get: function get(options) {
+    options.method = 'GET';
+    this.request(options);
+  },
+  delete: function _delete(options) {
+    options.method = 'DELETE';
+    this.request(options);
+  },
+  put: function put(options) {
+    options.method = 'PUT';
+    this.request(options);
+  },
+  request: function request(options) {
+    var apiRoot = this.API_ROOT;
+    var token = '';
+    try {
+      token = wx.getStorageSync('token');
+    } catch (e) {
+      // Do something when catch error
+    }
+    var requireLogin = true;
+    if (typeof options.login == 'undefined' || options.login == true) {
+      requireLogin = true;
+    } else {
+      requireLogin = false;
+    }
+    wx.request({
+      url: apiRoot + options.url,
+      data: options.data,
+      method: options.method ? options.method : 'POST',
+      header: {
+        'Cache-Control': 'no-cache',
+        'Content-Type': 'application/x-www-form-urlencoded',
+        'XX-Token': token,
+        'XX-Device-Type': 'wxapp',
+        'XX-Api-Version': this.API_VERSION
+      },
+      success: function success(res) {
+        var data = res.data;
+        if (data.code == 10001 && requireLogin) {
+          if (!tryingLogin) {
+            // tryingLogin        = true;
+            // var hasGetUserInfo = wx.getStorageSync('hasGetUserInfo');
+            // if (hasGetUserInfo) {
+            //     wx.showToast({
+            //         title: '正在重新登录',
+            //         icon: 'success',
+            //         duration: 1000
+            //     });
+            //     setTimeout(() => {
+            //         this.login();
+            //     }, 1000);
+            // } else {
+            //     this.login();
+            // }
+          }
+          // 登录注册
+          var currentPages = getCurrentPages();
+          console.log('-------no login!---------');
+          var currentRoute = currentPages.pop()['__route__'];
+          if (currentRoute != 'pages/login/login') {
+            wx.navigateTo({
+              url: '/pages/login/login'
+            });
+          }
+        } else {
+          options.success(data);
+        }
+      },
+      fail: function fail(res) {
+        if (options.fail) {
+          options.fail(res);
+        }
+      },
+      complete: options.complete ? options.complete : null
+    });
+  },
+  login: function login() {
+    var _this = this;
+    wx.login({
+      success: function success(loginRes) {
+        console.log(loginRes);
+        if (loginRes.code) {
+          wx.getUserInfo({
+            withCredentials: true,
+            success: function success(res) {
+              console.log(res);
+              wx.setStorageSync('hasGetUserInfo', '1');
+              _this.post({
+                url: 'wxapp/public/login',
+                data: {
+                  code: loginRes.code,
+                  encrypted_data: res.encryptedData,
+                  iv: res.iv,
+                  raw_data: res.rawData,
+                  signature: res.signature
+                },
+                success: function success(data) {
+                  if (data.code == 1) {
+                    wx.showToast({
+                      title: '登录成功!',
+                      icon: 'success',
+                      duration: 1000
+                    });
+                    try {
+                      wx.setStorageSync('login', '1');
+                      wx.setStorageSync('token', data.data.token);
+                      wx.setStorageSync('user', data.data.user);
+                    } catch (e) {}
+                    setTimeout(function () {
+                      wx.switchTab({
+                        url: '/pages/index/index',
+                        success: function success(res) {
+                          // getCurrentPages()[0].onPullDownRefresh()
+                        }
+                      });
+                    }, 1000);
+                  }
+                },
+                complete: function complete() {
+                  tryingLogin = false;
+                }
+              });
+            },
+            fail: function fail(res) {
+              console.log(res);
+              tryingLogin = false;
+              if (res.errMsg == "getUserInfo:cancel" || res.errMsg == "getUserInfo:fail auth deny") {
+                wx.showModal({
+                  title: '用户授权失败',
+                  showCancel: false,
+                  content: '请删除此小程序重新授权!',
+                  success: function success(res) {
+                    if (res.confirm) {
+                      console.log('用户点击确定');
+                    }
+                  }
+                });
+              }
+            }
+          });
+        } else {
+          tryingLogin = false;
+        }
+      },
+      fail: function fail() {
+        tryingLogin = false;
+      }
+    });
+  },
+  uploadFile: function uploadFile(options) {
+    options.url = this.API_ROOT + options.url;
+    var token = this.getToken();
+    var that = this;
+    var oldSuccess = options.success;
+    options.success = function (res) {
+      console.log(res.data);
+      var data = JSON.parse(res.data);
+      console.log(data);
+      if (data.code == 0 && data.data && data.data.code && data.data.code == 10001) {
+        // wx.navigateTo({
+        //     url: '/pages/login/login'
+        // });
+        that.login();
+      } else {
+        oldSuccess(data);
+      }
+    };
+    options.header = {
+      'Content-Type': 'multipart/form-data',
+      'XX-Token': token,
+      'XX-Device-Type': 'wxapp',
+      'XX-Api-Version': this.API_VERSION
+    };
+    wx.uploadFile(options);
+  },
+  getToken: function getToken() {
+    var token = '';
+    try {
+      token = wx.getStorageSync('token');
+    } catch (e) {
+      // Do something when catch error
+    }
+    return token;
+  },
+  json2Form: function json2Form(json) {
+    var str = [];
+    for (var p in json) {
+      str.push(encodeURIComponent(p) + "=" + encodeURIComponent(json[p]));
+    }
+    return str.join("&");
+  },
+  timeFormat: function timeFormat(second, fmt) {
+    var mDate = new Date();
+    mDate.setTime(second * 1000);
+    return mDate.Format(fmt);
+  },
+  getCurrentPageUrl: function getCurrentPageUrl() {
+    var currentPages = getCurrentPages();
+    var currentPage = currentPages.pop();
+    var page = currentPage['__route__'];
+    var pageParams = [];
+    if (currentPage.params) {
+      for (var key in currentPage.params) {
+        pageParams.push(key + "=" + currentPage.params[key]);
+      }
+    }
+    if (pageParams.length > 0) {
+      page = page + '?' + pageParams.join("&");
+    }
+    return page;
+  },
+  /**
+   *
+   * @param itemKey
+   * @param newItems
+   * @param formatCallback
+   * @param replace
+   * @param listKey
+   * @returns {Array}
+   */
+  updatePageList: function updatePageList(itemKey, newItems, formatCallback, replace, listKey) {
+    var page = this.getCurrentPageUrl();
+    console.log(page + "ddd");
+    return this.updatePageListByPage(page, itemKey, newItems, formatCallback, replace, listKey);
+  },
+  /**
+   *
+   * @param page
+   * @param itemKey
+   * @param newItems
+   * @param formatCallback
+   * @param replace
+   * @param listKey
+   * @returns {Array}
+   */
+  updatePageListByPage: function updatePageListByPage(page, itemKey, newItems, formatCallback, replace, listKey) {
+    listKey = listKey ? listKey : 'list';
+    console.log(page);
+    if (!app.pagesData.hasOwnProperty(page)) {
+      app.pagesData[page] = {};
+    }
+    if (!app.pagesData[page][listKey] || replace) {
+      app.pagesData[page][listKey] = {};
+    }
+    if (newItems) {
+      newItems.forEach(function (item) {
+        var uniqueValue = '_' + item[itemKey];
+        if (formatCallback && typeof formatCallback == "function") {
+          item = formatCallback(item);
+        }
+        app.pagesData[page][listKey][uniqueValue] = item;
+      });
+    }
+    var list = [];
+    for (var key in app.pagesData[page][listKey]) {
+      list.push(app.pagesData[page][listKey][key]);
+    }
+    console.log(list);
+    return list;
+  },
+  /**
+   *
+   * @param key
+   * @param newItem
+   * @param listKey
+   * @returns {*|Array}
+   */
+  updatePageListItem: function updatePageListItem(key, newItem, formatCallback, listKey) {
+    var page = this.getCurrentPageUrl();
+    return this.updatePageListItemByPage(page, key, newItem, formatCallback, listKey);
+  },
+  /**
+   *
+   * @param page
+   * @param key
+   * @param newItem
+   * @param listKey
+   * @returns {Array}
+   */
+  updatePageListItemByPage: function updatePageListItemByPage(page, key, newItem, formatCallback, listKey) {
+    listKey = listKey ? listKey : 'list';
+    if (!app.pagesData.hasOwnProperty(page)) {
+      app.pagesData[page] = {};
+    }
+    if (!app.pagesData[page][listKey]) {
+      app.pagesData[page][listKey] = {};
+    }
+    if (formatCallback && typeof formatCallback == "function") {
+      newItem = formatCallback(newItem);
+    }
+    key = '_' + key;
+    app.pagesData[page][listKey][key] = Object.assign(app.pagesData[page][listKey][key], newItem);
+    var list = [];
+    for (var _key in app.pagesData[page][listKey]) {
+      list.push(app.pagesData[page][listKey][_key]);
+    }
+    console.log(list);
+    return list;
+  },
+  /**
+   *
+   * @param key
+   * @param listKey
+   * @returns {*|Array}
+   */
+  deletePageListItem: function deletePageListItem(key, listKey) {
+    var page = this.getCurrentPageUrl();
+    return this.deletePageListItemByPage(page, key, listKey);
+  },
+  /**
+   *
+   * @param page
+   * @param key
+   * @param listKey
+   * @returns {Array}
+   */
+  deletePageListItemByPage: function deletePageListItemByPage(page, key, listKey) {
+    listKey = listKey ? listKey : 'list';
+    if (!app.pagesData.hasOwnProperty(page)) {
+      app.pagesData[page] = {};
+    }
+    if (!app.pagesData[page][listKey]) {
+      app.pagesData[page][listKey] = {};
+    }
+    key = '_' + key;
+    delete app.pagesData[page][listKey][key];
+    var list = [];
+    for (var _key2 in app.pagesData[page][listKey]) {
+      list.push(app.pagesData[page][listKey][_key2]);
+    }
+    console.log(list);
+    return list;
+  },
+  pageNeedUpdate: function pageNeedUpdate(page, needUpdate) {
+    app.pagesNeedUpdate[page] = needUpdate;
+  },
+  getUploadUrl: function getUploadUrl(file) {
+    if (file && file.indexOf('http') === 0) {
+      return file;
+    }
+    return this.HOST + '/upload/' + file;
+  }
+};
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/wx.js */ 1)["default"]))
+
+/***/ }),
+
 /***/ 6:
 /*!***************************************************************!*\
   !*** ./node_modules/@babel/runtime/helpers/arrayWithHoles.js ***!
@@ -10663,6 +11032,71 @@ function _arrayWithHoles(arr) {
   if (Array.isArray(arr)) return arr;
 }
 module.exports = _arrayWithHoles, module.exports.__esModule = true, module.exports["default"] = module.exports;
+
+/***/ }),
+
+/***/ 60:
+/*!********************************************!*\
+  !*** E:/源码/私活/passageTicket/utils/date.js ***!
+  \********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// 对Date的扩展，将 Date 转化为指定格式的String
+// 月(M)、日(d)、小时(h)、分(m)、秒(s)、季度(q) 可以用 1-2 个占位符，
+// 年(y)可以用 1-4 个占位符，毫秒(S)只能用 1 个占位符(是 1-3 位的数字)
+// 例子：
+// (new Date()).format("yyyy-MM-dd hh:mm:ss.S") ==> 2006-07-02 08:09:04.423
+// (new Date()).format("yyyy-M-d h:m:s.S")      ==> 2006-7-2 8:9:4.18
+Date.prototype.format = function (fmt) {
+  //author: meizz
+  var o = {
+    "M+": this.getMonth() + 1,
+    //月份
+    "d+": this.getDate(),
+    //日
+    "h+": this.getHours(),
+    //小时
+    "m+": this.getMinutes(),
+    //分
+    "s+": this.getSeconds(),
+    //秒
+    "q+": Math.floor((this.getMonth() + 3) / 3),
+    //季度
+    "S": this.getMilliseconds() //毫秒
+  };
+
+  if (/(y+)/.test(fmt)) fmt = fmt.replace(RegExp.$1, (this.getFullYear() + "").substr(4 - RegExp.$1.length));
+  for (var k in o) {
+    if (new RegExp("(" + k + ")").test(fmt)) fmt = fmt.replace(RegExp.$1, RegExp.$1.length == 1 ? o[k] : ("00" + o[k]).substr(("" + o[k]).length));
+  }
+  return fmt;
+};
+
+/***/ }),
+
+/***/ 61:
+/*!*********************************************!*\
+  !*** E:/源码/私活/passageTicket/utils/utils.js ***!
+  \*********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+/* WEBPACK VAR INJECTION */(function(wx) {module.exports = {
+  // 封装toast函数
+  showToast: function showToast(title) {
+    var icon = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 'none';
+    var duration = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 2500;
+    var mask = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : false;
+    wx.showToast({
+      title: title || '',
+      icon: icon,
+      duration: duration,
+      mask: mask
+    });
+  }
+};
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/wx.js */ 1)["default"]))
 
 /***/ }),
 

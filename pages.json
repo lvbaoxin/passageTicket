@@ -1,12 +1,39 @@
 {
 	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
-
+		{
+			"path": "pages/personCenter/index",
+			"style": {
+				"navigationBarTitleText": "会员中心"
+			}
+		},
 		{
 			"path": "pages/ticketList/index",
 			"style": {
 				"navigationBarTitleText": "大连—烟台"
 			}
 		},
+		{
+			"path": "pages/bindTel/index",
+			"style": {
+				"navigationBarTitleText": "绑定手机"
+			}
+		},
+		{
+			"path": "pages/index/index",
+			"style": {
+				"navigationBarTitleText": "渤海湾水路客运联网售票"
+			}
+		},
+		
+		
+		{
+			"path": "pages/routeSelection/index",
+			"style": {
+				"navigationBarTitleText": "航线选择"
+			}
+		},
+		
+		
 		{
 			"path": "pages/ticketBuy/index",
 			"style": {
@@ -25,12 +52,7 @@
 				"navigationBarTitleText": "订单详情"
 			}
 		},
-		{
-			"path": "pages/index/index",
-			"style": {
-				"navigationBarTitleText": "渤海湾水路客运联网售票"
-			}
-		},
+		
 		{
 			"path": "pages/calendar/index",
 			"style": {
@@ -51,18 +73,7 @@
 			}
 		},
 
-		{
-			"path": "pages/bindTel/index",
-			"style": {
-				"navigationBarTitleText": "绑定手机"
-			}
-		},
-		{
-			"path": "pages/personCenter/index",
-			"style": {
-				"navigationBarTitleText": "会员中心"
-			}
-		},
+		
 
 		{
 			"path": "pages/invoice/index",
@@ -90,18 +101,18 @@
 		"list": [{
 				"pagePath": "pages/index/index",
 				"iconPath": "static/images/icon1.png",
-				"selectedIconPath": "static/images/icon1.png",
+				"selectedIconPath": "static/images/icon2.png",
 				"text": "首页"
 			}, {
 				"pagePath": "pages/order/index",
 				"iconPath": "static/images/icon3.png",
-				"selectedIconPath": "static/images/icon3.png",
+				"selectedIconPath": "static/images/icon4.png",
 				"text": "订单"
 			},
 			{
 				"pagePath": "pages/personCenter/index",
 				"iconPath": "static/images/icon5.png",
-				"selectedIconPath": "static/images/icon5.png",
+				"selectedIconPath": "static/images/icon6.png",
 				"text": "我的"
 			}
 		]

@@ -58,7 +58,7 @@
 						</view>
 						<view class="ticketTypeRight">
 							<view class="ticketTypePrice">￥{{v.ticketTypePrice}}</view>
-							<view class="ticketTypeBtn">预定</view>
+							<view class="ticketTypeBtn" @click="goTicketBuy()">预定</view>
 						</view>
 					</view>
 					<view v-show="item.cur==1">
@@ -77,6 +77,7 @@
 </template>
 
 <script>
+	var api = require('../../utils/api')
 	import FontAwesome from '@/components/Am-FontAwesome/index.vue'
 	export default {
 		name: "collapse",
@@ -103,7 +104,7 @@
 		},
 		mounted() {
 			this.arr = this.ticketList
-			console.log(this.arr, 'arr')
+			// console.log(this.arr, 'arr')
 		},
 		// computed: {
 		// 	ticketList() {
@@ -124,6 +125,27 @@
 					// })
 					return item
 				})
+			},
+			goTicketBuy(){
+				// wx.getUserProfile({
+				//   desc: '展示用户信息', 
+				//   success: (res) => {
+				//     api.login(res);
+				//     if (wx.getStorageSync('login')) {
+				//       this.setData({
+				//         userInfo: wx.getStorageSync('user'),
+				//         hasUserInfo: true
+				//       })
+				//     }
+				//   }
+				// })
+				console.log(wx.getStorageSync('user'),'userInfo')
+				
+				
+				
+				// uni.navigateTo({
+				// 	url: '/pages/ticketBuy/index'
+				// });
 			}
 		}
 	}

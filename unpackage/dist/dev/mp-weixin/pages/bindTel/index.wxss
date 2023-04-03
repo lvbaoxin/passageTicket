@@ -14,6 +14,7 @@
 .bindWxBtn{
 	color:#1485EE;
 	font-size:24rpx;
+	background:transparent;border:none;outline: none;margin:0;
 }
 .BindInput{
 	color:#A7A7A7;

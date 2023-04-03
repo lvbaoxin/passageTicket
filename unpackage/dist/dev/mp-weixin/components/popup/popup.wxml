@@ -1,3 +1,1 @@
-<block wx:if="{{popUpShow}}"><view data-ref="popUp" class="popUpBg vue-ref"><view class="popUpInside"><view class="popUpTop">公告</view><view class="popUpText">乘船公告 1.所有航线不允许绿牌纯电汽车以及绿牌插电式混合动力乘船。 2.乘船无需提供核酸检测 3.易燃易爆管制刀具有毒物品严禁乘船，比如散装白酒、煤气罐、酒精、各种刀具等物品 购票须知:
-			1.应《水路交通管理局》规定请实名制购票，当阿天携带二代身份证取票。 2.身高1.2米以下免票，身高1.2米-1.5米需购儿童票(坐票半价)，1.5米以上需购成人票。 取票须知:
-			1.请乘船人携带身份证原件在发船前至少提前1小时(节假日请提前2小时)至港口取票</view><view data-event-opts="{{[['tap',[['close',['$event']]]]]}}" class="popUpBtn" bindtap="__e">我知道了</view></view></view></block>
+<block wx:if="{{popUpShow}}"><view data-ref="popUp" class="popUpBg vue-ref"><view class="popUpInside"><view class="popUpTop">{{''+postTitle+''}}</view><view class="popUpText"><rich-text nodes="{{postContent}}"></rich-text></view><view data-event-opts="{{[['tap',[['close',['$event']]]]]}}" class="popUpBtn" bindtap="__e">我知道了</view></view></view></block>

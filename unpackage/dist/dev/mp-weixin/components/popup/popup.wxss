@@ -44,7 +44,6 @@
 }
 .popUpText {
 	overflow: hidden;
-	max-height: 400rpx;
 	padding: 20rpx;
 	font-size: 24rpx;
 	color: #1a1a1a;

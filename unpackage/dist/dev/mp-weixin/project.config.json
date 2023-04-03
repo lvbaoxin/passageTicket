@@ -7,13 +7,13 @@
     "urlCheck": false,
     "es6": false,
     "postcss": false,
-    "minified": false,
+    "minified": true,
     "newFeature": true,
     "bigPackageSizeSupport": true
   },
   "compileType": "miniprogram",
   "libVersion": "",
-  "appid": "wxdea06304ad534091",
+  "appid": "wx0264a49c8a20ad0b",
   "projectname": "passage_ticket",
   "condition": {
     "search": {

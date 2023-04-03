@@ -1,0 +1,33 @@
+
+.hotLineBG{
+	background:#fff;
+	overflow: hidden;
+}
+.clearHistory,.lineHistoryText{
+	font-size: 24rpx;
+	color: #a8a8a8;
+	float:left;
+	margin:20rpx;
+}
+.hotLineText{
+	font-size: 24rpx;
+	color: #a8a8a8;
+	padding:20rpx;
+}
+.hotLineBtn{
+	background: #ffffff;
+	border: 1rpx solid #a8a8a8;
+	border-radius: 6rpx;
+	text-align: center;
+	font-size: 30rpx;
+	padding:10rpx 20rpx;
+	float:left;
+	color: #1A1A1A;
+	margin: 0 0 20rpx 20rpx;
+}
+.hotLine{
+	color: #1A1A1A;
+	border-bottom: 1rpx dashed #a8a8a8;
+	padding:25rpx 20rpx;
+}
+

@@ -3,6 +3,7 @@ import {
 } from './request'
 
 module.exports = {
-  // 获取导航
-  getNavList: (data) => request('nav/', 'GET', data),
+  // 获取文章详情
+  getArticles: (data) => request('portal/articles/1', 'GET', data),
 }
+

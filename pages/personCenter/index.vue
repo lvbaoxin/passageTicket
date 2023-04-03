@@ -4,15 +4,15 @@
 			<view class="personTop">
 				<view class="personLeft">
 					<view class="avatar">
-						
+						<image :src="userInfo.avatar" class="avatar"></image>
 					</view>
 					<view class="nickRight">
-						<view class="nickName">微信用户</view>
+						<view class="nickName">{{userInfo.user_nickname}}</view>
 						<view class="personTel">15999999999</view>
 					</view>
 				</view>
 				<view class="personTools">
-					<uni-icons type="gear" size="26" color="#fff;"></uni-icons>
+					<uni-icons type="gear" size="26" color="#fff;" @click="goBindTel()"></uni-icons>
 				</view>
 			</view>
 			<view class="buyItem forFlex justifyBetween">
@@ -52,6 +52,26 @@
 </template>
 
 <script>
+	export default{
+		name:'personCenter',
+		
+		data() {
+			return {
+				userInfo:wx.getStorageSync('user')
+			}
+		},
+		mounted(){
+			this.userInfo = wx.getStorageSync('user')
+			console.log(this.userInfo,'this.userInfo')
+		},
+		methods:{
+			goBindTel(){
+				uni.navigateTo({
+					url: '/pages/bindTel/index'
+				});
+			}
+		}
+	}
 
 </script>
 
