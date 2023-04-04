@@ -209,7 +209,7 @@
 			<view class="affirmViewRight">确认订单</view>
 		</view>
 		<plate-input v-if="plateShow" :plate="plateNo" @export="setPlate" @close="plateShow=false" />
-		<Popup ref='popUp'></Popup>
+		<Popup ref='popUp' :postTitle ="postTitle" :postContent="postContent"></Popup>
 		<Calltel ref='Calltel'></Calltel>
 		<view class='addUserViewBg' v-show='addUserViewBg'>
 			<view class='addUserInside'>
@@ -306,6 +306,8 @@
 	export default {
 		data() {
 			return {
+				postTitle:'',
+				postContent:'',
 				cur: 0,
 				plateNo: '',
 				plateShow: false,

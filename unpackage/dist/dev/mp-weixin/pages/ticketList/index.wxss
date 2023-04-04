@@ -24,6 +24,9 @@
 	height: 90rpx;
 	background: #eff7ff;
 	border-radius: 10rpx;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 .dateTopItem {
 	/* float: left; */

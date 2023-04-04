@@ -1,1 +1,1 @@
-<view><calendar vue-id="2461b568-1" is-show="{{true}}" start-date="{{startDate}}" isFixed="{{isFixed}}" initMonth="{{initMonth}}" data-event-opts="{{[['^callback',[['getDate']]]]}}" bind:callback="__e" bind:__l="__l" vue-slots="{{['footer']}}"><view class="_div" slot="footer">我是脚部</view></calendar></view>
+<view><calendar vue-id="2461b568-1" is-show="{{true}}" start-date="{{startDate}}" isFixed="{{isFixed}}" initMonth="{{initMonth}}" data-event-opts="{{[['^callback',[['getDate']]]]}}" bind:callback="__e" bind:__l="__l"></calendar></view>

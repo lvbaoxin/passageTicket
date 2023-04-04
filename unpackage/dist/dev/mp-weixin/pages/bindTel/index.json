@@ -1,7 +1,4 @@
 {
   "navigationBarTitleText": "绑定手机",
-  "usingComponents": {
-    "uni-icons": "/uni_modules/uni-icons/components/uni-icons/uni-icons",
-    "font-awesome": "/components/Am-FontAwesome/index"
-  }
+  "usingComponents": {}
 }

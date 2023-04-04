@@ -1,9 +1,9 @@
 (global["webpackJsonp"] = global["webpackJsonp"] || []).push([["pages/bindTel/index"],{
 
 /***/ 53:
-/*!*************************************************************************!*\
-  !*** E:/源码/私活/passageTicket/main.js?{"page":"pages%2FbindTel%2Findex"} ***!
-  \*************************************************************************/
+/*!*****************************************************************************!*\
+  !*** E:/site_view/passageTicket/main.js?{"page":"pages%2FbindTel%2Findex"} ***!
+  \*****************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -22,9 +22,9 @@ createPage(_index.default);
 /***/ }),
 
 /***/ 54:
-/*!******************************************************!*\
-  !*** E:/源码/私活/passageTicket/pages/bindTel/index.vue ***!
-  \******************************************************/
+/*!**********************************************************!*\
+  !*** E:/site_view/passageTicket/pages/bindTel/index.vue ***!
+  \**********************************************************/
 /*! no static exports found */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -63,9 +63,9 @@ component.options.__file = "pages/bindTel/index.vue"
 /***/ }),
 
 /***/ 55:
-/*!*************************************************************************************!*\
-  !*** E:/源码/私活/passageTicket/pages/bindTel/index.vue?vue&type=template&id=293ffc10& ***!
-  \*************************************************************************************/
+/*!*****************************************************************************************!*\
+  !*** E:/site_view/passageTicket/pages/bindTel/index.vue?vue&type=template&id=293ffc10& ***!
+  \*****************************************************************************************/
 /*! exports provided: render, staticRenderFns, recyclableRender, components */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -85,9 +85,9 @@ __webpack_require__.r(__webpack_exports__);
 /***/ }),
 
 /***/ 56:
-/*!*************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--17-0!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/template.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-uni-app-loader/page-meta.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib??vue-loader-options!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/style.js!E:/源码/私活/passageTicket/pages/bindTel/index.vue?vue&type=template&id=293ffc10& ***!
-  \*************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*!*****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--17-0!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/template.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-uni-app-loader/page-meta.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib??vue-loader-options!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/style.js!E:/site_view/passageTicket/pages/bindTel/index.vue?vue&type=template&id=293ffc10& ***!
+  \*****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /*! exports provided: render, staticRenderFns, recyclableRender, components */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -98,29 +98,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "recyclableRender", function() { return recyclableRender; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "components", function() { return components; });
 var components
-try {
-  components = {
-    uniIcons: function () {
-      return Promise.all(/*! import() | uni_modules/uni-icons/components/uni-icons/uni-icons */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uni-icons/components/uni-icons/uni-icons")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uni-icons/components/uni-icons/uni-icons.vue */ 150))
-    },
-  }
-} catch (e) {
-  if (
-    e.message.indexOf("Cannot find module") !== -1 &&
-    e.message.indexOf(".vue") !== -1
-  ) {
-    console.error(e.message)
-    console.error("1. 排查组件名称拼写是否正确")
-    console.error(
-      "2. 排查组件是否符合 easycom 规范，文档：https://uniapp.dcloud.net.cn/collocation/pages?id=easycom"
-    )
-    console.error(
-      "3. 若组件不符合 easycom 规范，需手动引入，并在 components 中注册该组件"
-    )
-  } else {
-    throw e
-  }
-}
 var render = function () {
   var _vm = this
   var _h = _vm.$createElement
@@ -135,9 +112,9 @@ render._withStripped = true
 /***/ }),
 
 /***/ 57:
-/*!*******************************************************************************!*\
-  !*** E:/源码/私活/passageTicket/pages/bindTel/index.vue?vue&type=script&lang=js& ***!
-  \*******************************************************************************/
+/*!***********************************************************************************!*\
+  !*** E:/site_view/passageTicket/pages/bindTel/index.vue?vue&type=script&lang=js& ***!
+  \***********************************************************************************/
 /*! no static exports found */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -151,9 +128,9 @@ __webpack_require__.r(__webpack_exports__);
 /***/ }),
 
 /***/ 58:
-/*!**************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--13-1!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/script.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib??vue-loader-options!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/style.js!E:/源码/私活/passageTicket/pages/bindTel/index.vue?vue&type=script&lang=js& ***!
-  \**************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*!******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--13-1!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/script.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib??vue-loader-options!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/style.js!E:/site_view/passageTicket/pages/bindTel/index.vue?vue&type=script&lang=js& ***!
+  \******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -189,30 +166,42 @@ exports.default = void 0;
 //
 //
 //
+//
+//
+//
+//
+//
 
 var api = __webpack_require__(/*! ../../utils/api */ 59);
 var tools = __webpack_require__(/*! ../../utils/utils */ 61);
-var FontAwesome = function FontAwesome() {
-  __webpack_require__.e(/*! require.ensure | components/Am-FontAwesome/index */ "components/Am-FontAwesome/index").then((function () {
-    return resolve(__webpack_require__(/*! @/components/Am-FontAwesome/index.vue */ 158));
-  }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
-};
 var _default = {
   data: function data() {
     return {
-      telNumber: null
+      telNumber: null,
+      dis: false,
+      show: true,
+      isGrey: false,
+      //按钮样式
+      timer: null,
+      //设置计时器,
+      count: ""
     };
   },
-  components: {
-    'FontAwesome': FontAwesome
-  },
   methods: {
+    phoneTest: function phoneTest() {
+      var reg = /^(13[0-9]|14[5|7]|15[0|1|2|3|5|6|7|8|9]|18[0|1|2|3|5|6|7|8|9])\d{8}$/;
+      if (this.telNumber == '' || this.telNumber.length <= 10 || !reg.test(this.telNumber)) {
+        tools.showToast('请输入正确的手机号');
+        return false;
+      }
+    },
     getPhoneNumber: function getPhoneNumber(e) {
       console.log(e.detail.errMsg);
       console.log(e.detail.iv);
       console.log(e.detail.encryptedData);
     },
     sendCode: function sendCode() {
+      var _this = this;
       api.post({
         url: 'user/verification_code/send',
         data: {
@@ -221,6 +210,24 @@ var _default = {
         success: function success(data) {
           if (data.code == 1) {
             tools.showToast(data.msg);
+            var TIME_COUNT = 60;
+            if (!_this.timer) {
+              _this.count = TIME_COUNT;
+              _this.isGrey = true;
+              _this.show = false;
+              _this.dis = true;
+              _this.timer = setInterval(function () {
+                if (_this.count > 0 && _this.count <= TIME_COUNT) {
+                  _this.count--;
+                } else {
+                  _this.dis = false;
+                  _this.isGrey = false;
+                  _this.show = true;
+                  clearInterval(_this.timer);
+                  _this.timer = null;
+                }
+              }, 1000);
+            }
           }
           if (data.code == 0) {
             tools.showToast(data.msg);
@@ -236,9 +243,9 @@ exports.default = _default;
 /***/ }),
 
 /***/ 62:
-/*!***************************************************************************************!*\
-  !*** E:/源码/私活/passageTicket/pages/bindTel/index.vue?vue&type=style&index=0&lang=css& ***!
-  \***************************************************************************************/
+/*!*******************************************************************************************!*\
+  !*** E:/site_view/passageTicket/pages/bindTel/index.vue?vue&type=style&index=0&lang=css& ***!
+  \*******************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -252,9 +259,9 @@ __webpack_require__.r(__webpack_exports__);
 /***/ }),
 
 /***/ 63:
-/*!*******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/mini-css-extract-plugin/dist/loader.js??ref--6-oneOf-1-0!./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-1-1!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--6-oneOf-1-2!./node_modules/postcss-loader/src??ref--6-oneOf-1-3!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib??vue-loader-options!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/style.js!E:/源码/私活/passageTicket/pages/bindTel/index.vue?vue&type=style&index=0&lang=css& ***!
-  \*******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*!***********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/mini-css-extract-plugin/dist/loader.js??ref--6-oneOf-1-0!./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-1-1!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--6-oneOf-1-2!./node_modules/postcss-loader/src??ref--6-oneOf-1-3!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib??vue-loader-options!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/style.js!E:/site_view/passageTicket/pages/bindTel/index.vue?vue&type=style&index=0&lang=css& ***!
+  \***********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 

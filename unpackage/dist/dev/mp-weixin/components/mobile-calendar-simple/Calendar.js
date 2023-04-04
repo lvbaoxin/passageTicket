@@ -1,9 +1,9 @@
 (global["webpackJsonp"] = global["webpackJsonp"] || []).push([["components/mobile-calendar-simple/Calendar"],{
 
 /***/ 221:
-/*!*****************************************************************************!*\
-  !*** E:/源码/私活/passageTicket/components/mobile-calendar-simple/Calendar.vue ***!
-  \*****************************************************************************/
+/*!*********************************************************************************!*\
+  !*** E:/site_view/passageTicket/components/mobile-calendar-simple/Calendar.vue ***!
+  \*********************************************************************************/
 /*! no static exports found */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -42,9 +42,9 @@ component.options.__file = "components/mobile-calendar-simple/Calendar.vue"
 /***/ }),
 
 /***/ 222:
-/*!************************************************************************************************************************!*\
-  !*** E:/源码/私活/passageTicket/components/mobile-calendar-simple/Calendar.vue?vue&type=template&id=079c6f6c&scoped=true& ***!
-  \************************************************************************************************************************/
+/*!****************************************************************************************************************************!*\
+  !*** E:/site_view/passageTicket/components/mobile-calendar-simple/Calendar.vue?vue&type=template&id=079c6f6c&scoped=true& ***!
+  \****************************************************************************************************************************/
 /*! exports provided: render, staticRenderFns, recyclableRender, components */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -64,9 +64,9 @@ __webpack_require__.r(__webpack_exports__);
 /***/ }),
 
 /***/ 223:
-/*!************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--17-0!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/template.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-uni-app-loader/page-meta.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib??vue-loader-options!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/style.js!E:/源码/私活/passageTicket/components/mobile-calendar-simple/Calendar.vue?vue&type=template&id=079c6f6c&scoped=true& ***!
-  \************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*!****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--17-0!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/template.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-uni-app-loader/page-meta.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib??vue-loader-options!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/style.js!E:/site_view/passageTicket/components/mobile-calendar-simple/Calendar.vue?vue&type=template&id=079c6f6c&scoped=true& ***!
+  \****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /*! exports provided: render, staticRenderFns, recyclableRender, components */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -101,8 +101,7 @@ var render = function () {
           var m1 = _vm.themeOpacityBg(day, item.month, item.year)
           var m2 = _vm.addClassName(day, item.month, item.year)
           var m3 = _vm.themeBg(day, item.month, item.year)
-          var m4 = _vm.setTip(day, item.month, item.year, 1)
-          var m5 = _vm.setTip(day, item.month, item.year, 2)
+          var m4 = _vm.setLunar(item.year, item.month, day ? day : "")
           return {
             $orig: $orig,
             m0: m0,
@@ -110,7 +109,6 @@ var render = function () {
             m2: m2,
             m3: m3,
             m4: m4,
-            m5: m5,
           }
         })
         return {
@@ -138,9 +136,9 @@ render._withStripped = true
 /***/ }),
 
 /***/ 224:
-/*!******************************************************************************************************!*\
-  !*** E:/源码/私活/passageTicket/components/mobile-calendar-simple/Calendar.vue?vue&type=script&lang=js& ***!
-  \******************************************************************************************************/
+/*!**********************************************************************************************************!*\
+  !*** E:/site_view/passageTicket/components/mobile-calendar-simple/Calendar.vue?vue&type=script&lang=js& ***!
+  \**********************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -154,9 +152,9 @@ __webpack_require__.r(__webpack_exports__);
 /***/ }),
 
 /***/ 225:
-/*!*************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--13-1!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/script.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib??vue-loader-options!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/style.js!E:/源码/私活/passageTicket/components/mobile-calendar-simple/Calendar.vue?vue&type=script&lang=js& ***!
-  \*************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*!*****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--13-1!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/script.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib??vue-loader-options!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/style.js!E:/site_view/passageTicket/components/mobile-calendar-simple/Calendar.vue?vue&type=script&lang=js& ***!
+  \*****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -201,6 +199,10 @@ exports.default = void 0;
 //
 //
 //
+//
+
+var _require = __webpack_require__(/*! ./calendar.js */ 273),
+  calendar = _require.calendar;
 var _default2 = {
   props: {
     isShow: {
@@ -491,6 +493,18 @@ var _default2 = {
       date.setMilliseconds(0);
       return date * 1;
     },
+    setLunar: function setLunar(year, month, day) {
+      if (!day) return;
+      var lunar = calendar.solar2lunar(year, month, day); //农历
+      var dayLunar = lunar.IDayCn == '初一' ? lunar.IMonthCn + lunar.IDayCn : lunar.IDayCn;
+      if (lunar.festival) dayLunar = lunar.festival; // 阳历节日
+      else if (lunar.lunarFestival) dayLunar = lunar.lunarFestival; // 农历节日
+      else if (lunar.Term) dayLunar = lunar.Term; // 节气
+      var holidayArr = ["元旦", "春节", "清明节", "劳动节", "端午节", "中秋节", "国庆节"];
+      var isHoliday = false;
+      if (holidayArr.indexOf(dayLunar) != -1) isHoliday = true;
+      return dayLunar;
+    },
     //flag==1（返回今天，明天，后天)，flag==2（返回入住，离开，去返)
     setTip: function setTip(day, month, year, flag) {
       if (!day) return;
@@ -620,9 +634,9 @@ exports.default = _default2;
 /***/ }),
 
 /***/ 226:
-/*!***************************************************************************************************************************************!*\
-  !*** E:/源码/私活/passageTicket/components/mobile-calendar-simple/Calendar.vue?vue&type=style&index=0&id=079c6f6c&lang=less&scoped=true& ***!
-  \***************************************************************************************************************************************/
+/*!*******************************************************************************************************************************************!*\
+  !*** E:/site_view/passageTicket/components/mobile-calendar-simple/Calendar.vue?vue&type=style&index=0&id=079c6f6c&lang=less&scoped=true& ***!
+  \*******************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -636,9 +650,9 @@ __webpack_require__.r(__webpack_exports__);
 /***/ }),
 
 /***/ 227:
-/*!***********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/mini-css-extract-plugin/dist/loader.js??ref--10-oneOf-1-0!./node_modules/css-loader/dist/cjs.js??ref--10-oneOf-1-1!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--10-oneOf-1-2!./node_modules/postcss-loader/src??ref--10-oneOf-1-3!./node_modules/less-loader/dist/cjs.js??ref--10-oneOf-1-4!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--10-oneOf-1-5!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib??vue-loader-options!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/style.js!E:/源码/私活/passageTicket/components/mobile-calendar-simple/Calendar.vue?vue&type=style&index=0&id=079c6f6c&lang=less&scoped=true& ***!
-  \***********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*!***************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/mini-css-extract-plugin/dist/loader.js??ref--10-oneOf-1-0!./node_modules/css-loader/dist/cjs.js??ref--10-oneOf-1-1!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--10-oneOf-1-2!./node_modules/postcss-loader/src??ref--10-oneOf-1-3!./node_modules/less-loader/dist/cjs.js??ref--10-oneOf-1-4!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--10-oneOf-1-5!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib??vue-loader-options!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/style.js!E:/site_view/passageTicket/components/mobile-calendar-simple/Calendar.vue?vue&type=style&index=0&id=079c6f6c&lang=less&scoped=true& ***!
+  \***************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 

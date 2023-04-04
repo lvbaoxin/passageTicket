@@ -5,6 +5,8 @@ import Vue from 'vue'
 Vue.config.productionTip = false
 App.mpType = 'app'
 import 'static/css/style.css'
+import 'static/css/iconfont.css'
+
 try {
   function isPromise(obj) {
     return (

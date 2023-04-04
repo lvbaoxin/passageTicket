@@ -7,5 +7,6 @@ module.exports = {
 	    duration,
 	    mask
 	  });
-	}
+	},
+
 }

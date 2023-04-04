@@ -4,9 +4,9 @@
 		<!-- <button form-type="submit" open-type="getUserInfo" @getuserinfo="getUserInfo">点我登录</button>
 		<button open-type="getPhoneNumber" @getphonenumber="getPhoneNumber">点我手机号</button> -->
 		<calendar :is-show="true" :start-date='startDate' :isFixed='isFixed' :initMonth='initMonth' @callback="getDate">
-			<template v-slot:footer>
-				<div>我是脚部</div>
-			</template>
+			<!-- <template v-slot:footer>
+				<div class="calendarBtn">我是脚部</div>
+			</template> -->
 		</calendar>
 
 	</view>
@@ -60,7 +60,7 @@
 			},
 			//获取回调的日期数据
 			getDate(dateObj) {
-				//console.log(dateObj.startStr)
+				console.log(dateObj.startStr)
 				this.getDateArr(dateObj.startStr)
 			},
 			 getDateArr(dataObj) {
@@ -69,19 +69,25 @@
 			  const weeks = ['星期日','星期一','星期二','星期三','星期四','星期五','星期六'];
 			  // 获取当天
 			  dateArr.push({
-			    week: weeks[date.getDay()],
-			    dateDate: date.getDate()
+			    dateWeek: weeks[date.getDay()],
+			    dateDay: date.getDate(),
+				active:"active"
 			  });
 			  // 获取未来6天
 			  for (let i = 0; i < 6; i++) {
 			    date.setDate(date.getDate() + 1);
 			    dateArr.push({
-			      week: weeks[date.getDay()],
-			      dateDat: date.getDate()
+			      dateWeek: weeks[date.getDay()],
+			      dateDay: date.getDate(),
+				  active: ""
 			    });
 			  }
 			  console.log(dateArr)
+			  uni.redirectTo({
+			  	url: '/pages/ticketList/index?dateArr='+JSON.stringify(dateArr)
+			  });
 			  return dateArr;
+			  
 			}
 
 		}
@@ -91,6 +97,17 @@
 <style>
 page{
 	background:#fff;
+}
+.calendarBtn{
+	position: fixed;
+	bottom:0;
+	left:0;right:0;
+	height: 88rpx;
+	background: #1485ee ;
+	line-height: 88rpx;
+	color: #fff;
+	font-size: 32rpx;
+	text-align: center;
 }
 
 

@@ -18,10 +18,11 @@
 							@click="chooseDate(day, item.month, item.year)">
 							<div :class="[addClassName(day, item.month, item.year)]"
 								:style="{background:themeBg(day, item.month, item.year)}">
-								<p class="day-tip" :style="{color:themeColor}"><i
-										v-text="setTip(day, item.month, item.year,1)"></i></p>
+								<!-- <p class="day-tip" :style="{color:themeColor}"><i
+										v-text="setTip(day, item.month, item.year,1)"></i></p> -->
 								<p class="day">{{day?day:''}}</p>
-								<p class="recent"><i v-text="setTip(day, item.month, item.year,2)"></i></p>
+								<!-- <p class="recent"><i v-text="setTip(day, item.month, item.year,2)"></i></p> -->
+								<p class="recent"><i v-text="setLunar(item.year,item.month,day?day:'')"></i></p>
 							</div>
 						</li>
 					</ul>
@@ -33,6 +34,9 @@
 </template>
 
 <script>
+	let {
+		calendar
+	} = require("./calendar.js");
 	export default {
 		props: {
 			isShow: { //是否显示
@@ -169,6 +173,7 @@
 				this.betweenStarts = this.resetTime(this.betweenStart);
 				this.betweenEnds = this.resetTime(this.betweenEnd);
 				this.createClendar(); //创建日历数据
+
 			},
 			//创建每个月日历数据，传入月份1号前面用null填充
 			createDayList(month, year) {
@@ -314,6 +319,20 @@
 				date.setMilliseconds(0);
 				return date * 1;
 			},
+			setLunar(year, month, day) {
+				if (!day) return
+				let lunar = calendar.solar2lunar(year, month, day); //农历
+				let dayLunar = lunar.IDayCn == '初一' ? lunar.IMonthCn + lunar.IDayCn : lunar.IDayCn;
+				if (lunar.festival) dayLunar = lunar.festival; // 阳历节日
+				else if (lunar.lunarFestival) dayLunar = lunar.lunarFestival; // 农历节日
+				else if (lunar.Term) dayLunar = lunar.Term; // 节气
+				let holidayArr = ["元旦", "春节", "清明节", "劳动节", "端午节", "中秋节", "国庆节"];
+				let isHoliday = false;
+				if (holidayArr.indexOf(dayLunar) != -1) isHoliday = true;
+				return dayLunar
+			},
+
+
 			//flag==1（返回今天，明天，后天)，flag==2（返回入住，离开，去返)
 			setTip(day, month, year, flag) {
 				if (!day) return

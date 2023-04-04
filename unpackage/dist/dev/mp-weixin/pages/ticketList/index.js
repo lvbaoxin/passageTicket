@@ -1,9 +1,9 @@
 (global["webpackJsonp"] = global["webpackJsonp"] || []).push([["pages/ticketList/index"],{
 
 /***/ 42:
-/*!****************************************************************************!*\
-  !*** E:/源码/私活/passageTicket/main.js?{"page":"pages%2FticketList%2Findex"} ***!
-  \****************************************************************************/
+/*!********************************************************************************!*\
+  !*** E:/site_view/passageTicket/main.js?{"page":"pages%2FticketList%2Findex"} ***!
+  \********************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -22,9 +22,9 @@ createPage(_index.default);
 /***/ }),
 
 /***/ 43:
-/*!*********************************************************!*\
-  !*** E:/源码/私活/passageTicket/pages/ticketList/index.vue ***!
-  \*********************************************************/
+/*!*************************************************************!*\
+  !*** E:/site_view/passageTicket/pages/ticketList/index.vue ***!
+  \*************************************************************/
 /*! no static exports found */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -63,9 +63,9 @@ component.options.__file = "pages/ticketList/index.vue"
 /***/ }),
 
 /***/ 44:
-/*!****************************************************************************************!*\
-  !*** E:/源码/私活/passageTicket/pages/ticketList/index.vue?vue&type=template&id=76c72646& ***!
-  \****************************************************************************************/
+/*!********************************************************************************************!*\
+  !*** E:/site_view/passageTicket/pages/ticketList/index.vue?vue&type=template&id=76c72646& ***!
+  \********************************************************************************************/
 /*! exports provided: render, staticRenderFns, recyclableRender, components */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -85,9 +85,9 @@ __webpack_require__.r(__webpack_exports__);
 /***/ }),
 
 /***/ 45:
-/*!****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--17-0!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/template.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-uni-app-loader/page-meta.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib??vue-loader-options!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/style.js!E:/源码/私活/passageTicket/pages/ticketList/index.vue?vue&type=template&id=76c72646& ***!
-  \****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*!********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--17-0!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/template.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-uni-app-loader/page-meta.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib??vue-loader-options!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/style.js!E:/site_view/passageTicket/pages/ticketList/index.vue?vue&type=template&id=76c72646& ***!
+  \********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /*! exports provided: render, staticRenderFns, recyclableRender, components */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -101,7 +101,7 @@ var components
 try {
   components = {
     slFilter: function () {
-      return __webpack_require__.e(/*! import() | components/sl-filter/sl-filter */ "components/sl-filter/sl-filter").then(__webpack_require__.bind(null, /*! @/components/sl-filter/sl-filter.vue */ 136))
+      return __webpack_require__.e(/*! import() | components/sl-filter/sl-filter */ "components/sl-filter/sl-filter").then(__webpack_require__.bind(null, /*! @/components/sl-filter/sl-filter.vue */ 144))
     },
   }
 } catch (e) {
@@ -135,9 +135,9 @@ render._withStripped = true
 /***/ }),
 
 /***/ 46:
-/*!**********************************************************************************!*\
-  !*** E:/源码/私活/passageTicket/pages/ticketList/index.vue?vue&type=script&lang=js& ***!
-  \**********************************************************************************/
+/*!**************************************************************************************!*\
+  !*** E:/site_view/passageTicket/pages/ticketList/index.vue?vue&type=script&lang=js& ***!
+  \**************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -151,119 +151,34 @@ __webpack_require__.r(__webpack_exports__);
 /***/ }),
 
 /***/ 47:
-/*!*****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--13-1!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/script.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib??vue-loader-options!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/style.js!E:/源码/私活/passageTicket/pages/ticketList/index.vue?vue&type=script&lang=js& ***!
-  \*****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*!*********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--13-1!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/script.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib??vue-loader-options!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/style.js!E:/site_view/passageTicket/pages/ticketList/index.vue?vue&type=script&lang=js& ***!
+  \*********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-
+/* WEBPACK VAR INJECTION */(function(uni) {
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.default = void 0;
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-// 引入 api 下的 index 文件
-var $api = __webpack_require__(/*! @/api/index */ 48);
 var Collapse = function Collapse() {
   Promise.all(/*! require.ensure | components/collapse/collapse */[__webpack_require__.e("common/vendor"), __webpack_require__.e("components/collapse/collapse")]).then((function () {
-    return resolve(__webpack_require__(/*! ../../components/collapse/collapse.vue */ 143));
+    return resolve(__webpack_require__(/*! ../../components/collapse/collapse.vue */ 151));
   }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
 };
 var slFilter = function slFilter() {
   __webpack_require__.e(/*! require.ensure | components/sl-filter/sl-filter */ "components/sl-filter/sl-filter").then((function () {
-    return resolve(__webpack_require__(/*! @/components/sl-filter/sl-filter.vue */ 136));
+    return resolve(__webpack_require__(/*! @/components/sl-filter/sl-filter.vue */ 144));
   }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
 };
 var _default = {
   data: function data() {
     return {
       imgSrc: '../../static/images/1.jpg',
-      dateTopList: [{
-        'dateDay': 25,
-        'dateWeek': '星期日',
-        'active': "active"
-      }, {
-        'dateDay': 26,
-        'dateWeek': '星期日',
-        'active': ""
-      }, {
-        'dateDay': 27,
-        'dateWeek': '星期日',
-        'active': ""
-      }, {
-        'dateDay': 28,
-        'dateWeek': '星期日',
-        'active': ""
-      }, {
-        'dateDay': 29,
-        'dateWeek': '星期日',
-        'active': ""
-      }, {
-        'dateDay': 30,
-        'dateWeek': '星期日',
-        'active': ""
-      }, {
-        'dateDay': 31,
-        'dateWeek': '星期日',
-        'active': ""
-      }],
+      dateTopList: [],
       value: ['0'],
       accordionVal: '1',
       extraIcon: {
@@ -382,6 +297,7 @@ var _default = {
           'value': 'test_3'
         }]
       }
+
       // {
       // 	'title': '排序',
       // 	'key': 'sort',
@@ -408,7 +324,8 @@ var _default = {
       // }
       ],
 
-      swiperInside: false
+      swiperInside: false,
+      weekList: ["日", "一", "二", "三", "四", "五", "六"]
     };
   },
   computed: {
@@ -423,9 +340,52 @@ var _default = {
     'Collapse': Collapse,
     'slFilter': slFilter
   },
+  onLoad: function onLoad(option) {
+    console.log(option, 'option');
+    if (option.dateArr) {
+      this.dateTopList = JSON.parse(option.dateArr);
+    } else {
+      var dateArr = [];
+      var date = new Date(this.dateFormat().dateStr);
+      var weeks = ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六'];
+      // 获取当天
+      dateArr.push({
+        dateWeek: weeks[date.getDay()],
+        dateDay: date.getDate(),
+        active: "active"
+      });
+      // 获取未来6天
+      for (var i = 0; i < 6; i++) {
+        date.setDate(date.getDate() + 1);
+        dateArr.push({
+          dateWeek: weeks[date.getDay()],
+          dateDay: date.getDate(),
+          active: ""
+        });
+      }
+      console.log(dateArr, 'dateArr');
+      this.dateTopList = dateArr;
+      return dateArr;
+    }
+  },
   methods: {
-    tabCur: function tabCur(e) {
-      this.cur = e;
+    dateFormat: function dateFormat() {
+      var date = new Date();
+      var year = date.getFullYear();
+      var month = parseInt(date.getMonth() + 1) > 9 ? parseInt(date.getMonth() + 1) : '0' + parseInt(date.getMonth() + 1);
+      var day = date.getDate() > 9 ? date.getDate() : '0' + date.getDate();
+      return {
+        dateStr: year + "-" + month + "-" + day,
+        week: "周" + this.weekList[date.getDay()]
+      };
+    },
+    selectDay: function selectDay(item, index) {
+      for (var i = 0; i < this.dateTopList.length; i++) {
+        this.dateTopList[i].active = false;
+        if (this.dateTopList[i].dateDay == item.dateDay) {
+          this.dateTopList[i].active = true;
+        }
+      }
     },
     confirm: function confirm(e) {
       console.log('eeee', e);
@@ -433,27 +393,26 @@ var _default = {
     reset: function reset(val) {
       this.defaultVal = val;
     },
-    // 在方法中调用
-    // goList() {
-    // 	let data = {}
-    // 	$api.getNavList(data).then((res) => {
-    // 		console.log(res, 'res');
-    // 	})
-    // },
     result: function result(val) {
       console.log('filter_result:' + JSON.stringify(val));
       this.filterResult = JSON.stringify(val, null, 2);
+    },
+    goCalendar: function goCalendar() {
+      uni.navigateTo({
+        url: '/pages/calendar/index'
+      });
     }
   }
 };
 exports.default = _default;
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 2)["default"]))
 
 /***/ }),
 
 /***/ 51:
-/*!******************************************************************************************!*\
-  !*** E:/源码/私活/passageTicket/pages/ticketList/index.vue?vue&type=style&index=0&lang=css& ***!
-  \******************************************************************************************/
+/*!**********************************************************************************************!*\
+  !*** E:/site_view/passageTicket/pages/ticketList/index.vue?vue&type=style&index=0&lang=css& ***!
+  \**********************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -467,9 +426,9 @@ __webpack_require__.r(__webpack_exports__);
 /***/ }),
 
 /***/ 52:
-/*!**********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/mini-css-extract-plugin/dist/loader.js??ref--6-oneOf-1-0!./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-1-1!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--6-oneOf-1-2!./node_modules/postcss-loader/src??ref--6-oneOf-1-3!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib??vue-loader-options!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/style.js!E:/源码/私活/passageTicket/pages/ticketList/index.vue?vue&type=style&index=0&lang=css& ***!
-  \**********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*!**************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/mini-css-extract-plugin/dist/loader.js??ref--6-oneOf-1-0!./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-1-1!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--6-oneOf-1-2!./node_modules/postcss-loader/src??ref--6-oneOf-1-3!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib??vue-loader-options!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/style.js!E:/site_view/passageTicket/pages/ticketList/index.vue?vue&type=style&index=0&lang=css& ***!
+  \**************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 

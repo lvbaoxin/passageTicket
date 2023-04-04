@@ -61,7 +61,7 @@
 
 <script>
 	export default {
-		name: "Mr.vue",
+		name: "Order.vue",
 		data() {
 			return {
 				cur: 0

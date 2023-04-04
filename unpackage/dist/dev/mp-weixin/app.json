@@ -1,14 +1,14 @@
 {
   "pages": [
-    "pages/personCenter/index",
     "pages/ticketList/index",
+    "pages/calendar/index",
     "pages/bindTel/index",
+    "pages/personCenter/index",
     "pages/index/index",
     "pages/routeSelection/index",
     "pages/ticketBuy/index",
     "pages/ticketBuyNext/index",
     "pages/orderDetails/index",
-    "pages/calendar/index",
     "pages/addUser/index",
     "pages/order/index",
     "pages/invoice/index"

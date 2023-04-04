@@ -5,14 +5,17 @@
 		<Collapse :ticketList="ticketList"></Collapse>
 		<view class="dateTop">
 			<view class='dateTopList'>
-				<view class="dateTopItem" v-for="(item,index) in dateTopList" :class="item.active" :key="index">
+				<view class="dateTopItem" @click="selectDay(item,index)" v-for="(item,index) in dateTopList"
+					:class="[item.active ? 'active' : '']" :key="index">
 					<view class='dateDay'>{{item.dateDay}}</view>
 					<view class='dateWeek'>{{item.dateWeek}}</view>
 				</view>
 			</view>
 			<view class="line"></view>
 			<view class='dateTopSelect'>
-				<view class="dateTopSelectBtn">按钮</view>
+				<view class="dateTopSelectBtn" @click="goCalendar()">
+					<span class="iconfont icon-rili" style='color: #333333;font-size:60rpx'></span>
+				</view>
 			</view>
 		</view>
 		<view class='addUserViewBg' v-show='swiperInside'>
@@ -53,50 +56,13 @@
 </template>
 
 <script>
-	// 引入 api 下的 index 文件
-	const $api = require('@/api/index')
 	import Collapse from '../../components/collapse/collapse.vue'
 	import slFilter from '@/components/sl-filter/sl-filter.vue';
 	export default {
 		data() {
 			return {
 				imgSrc: '../../static/images/1.jpg',
-				dateTopList: [{
-						'dateDay': 25,
-						'dateWeek': '星期日',
-						'active': "active"
-					},
-					{
-						'dateDay': 26,
-						'dateWeek': '星期日',
-						'active': ""
-					},
-					{
-						'dateDay': 27,
-						'dateWeek': '星期日',
-						'active': ""
-					},
-					{
-						'dateDay': 28,
-						'dateWeek': '星期日',
-						'active': ""
-					},
-					{
-						'dateDay': 29,
-						'dateWeek': '星期日',
-						'active': ""
-					},
-					{
-						'dateDay': 30,
-						'dateWeek': '星期日',
-						'active': ""
-					},
-					{
-						'dateDay': 31,
-						'dateWeek': '星期日',
-						'active': ""
-					},
-				],
+				dateTopList: [],
 				value: ['0'],
 				accordionVal: '1',
 				extraIcon: {
@@ -238,6 +204,7 @@
 
 						]
 					},
+
 					// {
 					// 	'title': '排序',
 					// 	'key': 'sort',
@@ -263,7 +230,8 @@
 					// 	]
 					// }
 				],
-				swiperInside:false
+				swiperInside: false,
+				weekList: ["日", "一", "二", "三", "四", "五", "六"]
 			}
 		},
 		computed: {
@@ -279,9 +247,57 @@
 			'slFilter': slFilter
 		},
 
+		onLoad: function(option) {
+			console.log(option,'option')
+			if (option.dateArr) {
+				this.dateTopList = JSON.parse(option.dateArr)
+			} else {
+				const dateArr = [];
+				let date = new Date(this.dateFormat().dateStr);
+				const weeks = ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六'];
+				// 获取当天
+				dateArr.push({
+					dateWeek: weeks[date.getDay()],
+					dateDay: date.getDate(),
+					active: "active"
+				});
+				// 获取未来6天
+				for (let i = 0; i < 6; i++) {
+					date.setDate(date.getDate() + 1);
+					dateArr.push({
+						dateWeek: weeks[date.getDay()],
+						dateDay: date.getDate(),
+						active: ""
+					});
+				}
+				console.log(dateArr, 'dateArr')
+				this.dateTopList = dateArr
+				return dateArr;
+
+			}
+
+
+		},
 		methods: {
-			tabCur(e) {
-				this.cur = e
+			dateFormat() {
+				let date = new Date();
+				var year = date.getFullYear()
+				var month = parseInt(date.getMonth() + 1) > 9 ? parseInt(date.getMonth() + 1) : '0' + parseInt(date
+					.getMonth() + 1)
+				var day = date.getDate() > 9 ? date.getDate() : '0' + date.getDate()
+				return {
+					dateStr: year + "-" + month + "-" + day,
+					week: "周" + this.weekList[date.getDay()],
+				};
+			},
+
+			selectDay(item, index) {
+				for (var i = 0; i < this.dateTopList.length; i++) {
+					this.dateTopList[i].active = false;
+					if (this.dateTopList[i].dateDay == item.dateDay) {
+						this.dateTopList[i].active = true;
+					}
+				}
 			},
 			confirm(e) {
 				console.log('eeee', e);
@@ -289,18 +305,16 @@
 			reset(val) {
 				this.defaultVal = val
 			},
-			// 在方法中调用
-			// goList() {
 
-			// 	let data = {}
-			// 	$api.getNavList(data).then((res) => {
-			// 		console.log(res, 'res');
-			// 	})
-			// },
 			result(val) {
 				console.log('filter_result:' + JSON.stringify(val));
 				this.filterResult = JSON.stringify(val, null, 2)
 			},
+			goCalendar() {
+				uni.navigateTo({
+					url: '/pages/calendar/index'
+				});
+			}
 		}
 	}
 </script>
@@ -335,6 +349,9 @@
 		height: 90rpx;
 		background: #eff7ff;
 		border-radius: 10rpx;
+		display: flex;
+		align-items: center;
+		justify-content: center;
 
 	}
 

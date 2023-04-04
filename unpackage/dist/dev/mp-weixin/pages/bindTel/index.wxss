@@ -1,46 +1,54 @@
 
-.bindView{
-	margin-top:20rpx;
+.grey {
+	background-color: #EDEEF1 !important;
+	border-color: #EDEEF1;
+	color: #666;
+	width: 30%;
 }
-.bindItem{
-	height:100rpx;
+.bindView {
+	margin-top: 20rpx;
+}
+.bindItem {
+	height: 100rpx;
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
 	background: #fff;
-	padding:0 20rpx;
-	border-bottom:1rpx solid #F6F6F6;
+	padding: 0 20rpx;
+	border-bottom: 1rpx solid #F6F6F6;
 }
-.bindWxBtn{
-	color:#1485EE;
-	font-size:24rpx;
-	background:transparent;border:none;outline: none;margin:0;
+.bindWxBtn {
+	color: #1485EE;
+	font-size: 24rpx;
+	background: transparent;
+	border: none;
+	outline: none;
+	margin: 0;
 }
-.BindInput{
-	color:#A7A7A7;
+.BindInput {
+	color: #A7A7A7;
 }
-.bindCodeBtn{
-	border:none;
+.bindCodeBtn {
+	border: none;
 	margin: 0;
 	line-height: 40rpx;
 	background: #1485ee !important;
 	border-radius: 20rpx;
-	color:#fff !important;
-	font-size:24rpx;
-	padding:0rpx 30rpx;
+	color: #fff !important;
+	font-size: 24rpx;
+	padding: 0rpx 30rpx;
 	outline: none;
 }
-.bindTelBtn{
+.bindTelBtn {
 	outline: none;
-	border:none;
+	border: none;
 	width: 650rpx;
 	height: 88rpx;
 	background: #1485ee !important;
 	border-radius: 10rpx;
 	line-height: 88rpx;
-	color:#fff;
+	color: #fff;
 	font-size: 32rpx;
-	margin:90rpx auto 0;
+	margin: 90rpx auto 0;
 }
-
 

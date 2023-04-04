@@ -4,10 +4,10 @@
 			<view class="personTop">
 				<view class="personLeft">
 					<view class="avatar">
-						<image :src="userInfo.avatar" class="avatar"></image>
+						<image :src="userInfo.avatar || avatar" class="avatar"></image>
 					</view>
 					<view class="nickRight">
-						<view class="nickName">{{userInfo.user_nickname}}</view>
+						<view class="nickName">{{userInfo.user_nickname || '未登录'}}</view>
 						<view class="personTel">15999999999</view>
 					</view>
 				</view>
@@ -57,7 +57,8 @@
 		
 		data() {
 			return {
-				userInfo:wx.getStorageSync('user')
+				userInfo:wx.getStorageSync('user'),
+				avatar:'../../static/images/avatar.png'
 			}
 		},
 		mounted(){
